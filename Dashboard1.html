@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<!--// #007833 for first icon --- #F5A623 -- for second icon -- #D0021B - For third -- #4890E2 - For fourth -->
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ taglib uri="http://aveksa.com/guiframework.tld" prefix="gui" %>
+<%@ page import="com.aveksa.gui.core.MainManager" %>
+<%@ page import="com.aveksa.gui.objects.ObjectStore" %>
+<%@ page import="com.aveksa.gui.objects.changeRequest.ChangeRequestObjectStore" %>
+<%@ page import="com.aveksa.gui.objects.user.GuiEnterpriseUser" %>
+<%@ page import="com.aveksa.gui.pages.admin.user.summary.UserSummaryPageData" %>
+<%@ page import="com.aveksa.gui.pages.changeRequest.activity.my.summary.ChangeActivityMySummaryPageData" %>
+<%@ page import="com.aveksa.gui.pages.changeRequest.approval.my.summary.ChangeRequestMyApprovalsSummaryPageData" %>
+<%@ page import="com.aveksa.gui.pages.exception.my.summary.MyExceptionsSummaryPageData" %>
+<%@ page import="com.aveksa.gui.pages.portlet.myTasks.MyTasksConfig.TaskType" %>
+<%@ page import="com.aveksa.gui.pages.portlet.myTasks.data.MyTasksStore" %>
+<%@ page import="com.aveksa.gui.pages.review.review.summary.ReviewSummaryPageData" %>
+<%@ page import="com.aveksa.gui.util.*" %>
+<%@ page import="com.aveksa.server.runtime.AveksaSystem" %>
+<%@ page import="com.aveksa.server.system.SystemService" %>
+<%@ page import="com.aveksa.server.utils.collections.CollectionCriteria" %>
+<%@ page import="com.aveksa.server.utils.collections.filtering.FilterCriteria" %>
+<%@ page import="com.aveksa.server.utils.collections.filtering.FilterCriteria.Operator" %>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dashboard</title>
+		<style>	
+			body{
+				font-family:"Arial";
+			}
+			.header{
+				height:4%;
+			}
+			.main{
+				background-color:#CFD7DA ;
+				padding-top:3%;
+				padding-bottom:0.2%;
+				width:100%;
+			}
+			.first{
+				height:300px;
+				margin-bottom:2.5%;
+			}
+			.second{
+				height:285px;
+				font-size:13px;
+			}
+			#block1{
+				margin-left:1%;
+				height:auto;
+				width:24%;
+				float:left;
+				background-color:#FFFFFF ;
+				border-top: 5px solid #007833;
+			}
+			#block1_div{
+				
+			}
+			#block2{
+				margin-left:0.2%;
+				height:auto;
+				width:24%;
+				float:left;
+				background-color:#FFFFFF  ;
+				border-top: 5px solid #F5A623;
+			}
+			#block2_div{
+				height:46.1px;
+			}
+			#block3{
+				margin-left:0.2%;
+				height:auto;
+				width:24%;
+				float:left;
+				background-color:#FFFFFF  ;
+				border-top: 5px solid #D0021B;
+			}
+			#block3_div{
+				height:46.1px;
+			}
+			#block4{
+				margin-left:0.2%;
+				height:auto;
+				width:25%;
+				float:left;
+				background-color:#FFFFFF ; 
+				border-top: 5px solid #4890E2;
+			}
+			#block4_div{
+				height:46.1px;
+			}
+			#block5{
+				margin-left:1%;
+				height:250px;
+				width:37%;
+				float:left;
+				background-color:#FFFFFF;
+			}
+			#block6{
+				margin-left:3px;
+				height:160px;
+				width:37%;
+				float:left;
+				background-color:#FFFFFF;
+			}
+			#block7{
+				margin-left:3px;
+				height:250px;
+				width:60.3%;
+				float:left;
+				background-color:#FFFFFF;
+			}
+			.links{
+				background-color:#979797 ;
+				text-align:center;
+				height:29px;				
+			}
+			.anc_link{
+				padding-top:6px;
+				display:block;
+				height:23px;
+				font-weight:bold;
+				text-decoration:none;
+				font-family: "Arial Rounded MT";
+				font-weight:bold;
+				font-size: 14px;
+				color: #FFFFFF;
+				letter-spacing: 0.18px;
+			}
+			.anc_link:hover{
+				background: #666666;
+			}
+			
+			#block1_head{	
+				padding-left:15px;
+				font-size:15px;
+				height:46.1px;
+				margin:0px;
+				background-color:#EAEAEA;
+			}
+			#block2_head{
+				padding-left:15px;
+				font-size:15px;
+				height:46.1px;
+				width:94.5%;
+				background-color:#EAEAEA;
+			}
+			#block3_head{
+				padding-left:15px;
+				font-size:15px;
+				height:46.1px;
+				width:94.5%;
+				background-color:#EAEAEA;
+			}
+			#block4_head{
+				padding-left:15px;
+				font-size:14px;
+				height:46.1px;
+				width:94.5%;
+				background-color:#EAEAEA;
+			}
+			#block5_head{
+				padding-top:15px;
+				padding-left:20px;	
+				height:35px;
+				width:94.5%;
+				background-color:#EEEEEE;
+				font-family: "Arial Rounded MT";
+				font-weight:bold;
+				font-size: 12px;
+				color: #000000;
+				letter-spacing: 0.16px;
+			}
+			#block7_head{
+				padding-top:15px;
+				padding-left:20px;
+				height:25px;
+				
+				background-color:#EEEEEE;
+				font-family: "Arial Rounded MT";
+				font-weight:bold;
+				font-size: 12px;
+				color: #000000;
+				letter-spacing: 0.16px;
+			}
+			.block_div_body{
+				height:220px;	
+			}
+			.body_links{
+				background: #F5F6F7;
+				float:left;	
+				width:100%;
+				font-family: Arial;
+				font-size: 12px; 
+				color: #282A2A;
+			}
+			.body_links1{
+				background: #FFFFFF;
+				float:left;	
+				width:100%;
+				font-family: Arial;
+				font-size: 12px; 
+				color: #282A2A;	
+			}
+			.anc_body_links{
+				font-family: Arial;
+				font-size: 12px;
+				color: #282A2A;
+				padding-top:15px;
+				padding-left:15px;
+				padding-right:10px;
+				padding-bottom:8px;
+				display:block;
+				height:30px;
+				text-decoration:none;
+				border: 1px solid #EBEBEB;
+			}
+			.anc_body_links1{
+				font-family: Arial;
+				font-size: 12px;
+				color: #282A2A;
+				padding-top:15px;
+				padding-left:15px;
+				padding-right:10px;
+				padding-bottom:8px;
+				display:block;
+				height:30px;
+				text-decoration:none;
+				border: 1px solid #EBEBEB;
+			}
+			a.anc_body_links:hover{
+				background: #576775;
+				color:white;
+			}
+			.block5_main1{
+				float:left;
+				width:42.3%;
+				height:20%;
+				margin-top:2%;
+				margin-left:4.5%;
+				padding-left:3%;
+			}
+			.block5_main2{
+				float:left;
+				width:41%;
+				height:20%;
+				margin-top:2%;
+				margin-left:4.5%;
+				padding-left:3%;
+				padding-right:1%;
+			}
+			.block5_text{
+				float:left;
+				width:60%;
+				padding-top:9%;
+				padding-left:8%;
+			}
+			.block5_count{
+				float:left;
+				width:15%;
+				height:50%;
+				background-color:#D0011B ;
+				margin-top:8%;
+				border-radius:50px;
+				text-align:center;
+				font-family: Arial-BoldMT;
+				font-size: 13px;
+				color: #FFFFFF;
+				letter-spacing: 0.17px;
+			}
+			.block6_btn{
+				width:90%;
+				height:31px;
+				background-color:#009900;
+				border:none;
+				color:white;
+			}
+			ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				background-color: #333;
+			}
+			li {
+				float: left;
+			}
+			li a {
+				display: block;
+				color: white;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+				font-size:13px;
+			}
+			li a:hover {
+				background-color: #111;
+			}
+			.active{
+				color:yellow;
+			}
+			img{
+				float:left;
+			}
+			i{
+				width :0px;
+				height: 0px;
+				border-left: 5px solid transparent;
+				border-right: 5px solid transparent;
+				position:absolute;
+				
+				border-top: 8px solid #666666;
+				
+				padding-bottom:3px;
+				
+			}
+		</style>
+	</head>
+	<body>
+	<%
+    ResMgr resMgr = MainManager.getResMgr();
+    GuiEnterpriseUser user  = MainManager.getCurrentUser();
+    boolean isSupervisor = MainManager.getSessionParams().getUserAZ().isSupervisor();
+    boolean isAccessRequest = AveksaSystem.getRuntime().getService(SystemService.class).isAccessRequest();
+    boolean isRules = AveksaSystem.getRuntime().getService(SystemService.class).isRulesEnabled();
+    boolean isReviews = AveksaSystem.getRuntime().getService(SystemService.class).isReviews();
+    boolean showDividers = isAccessRequest;
+
+    //TODO: fix the outer counts
+    Integer reviews = null;
+    Integer approvals = null;
+    Integer activities = null;
+    Integer violations = null;
+    Integer requests = null;
+    if (isReviews) {
+        //if(ObjectStore.getAllReviewsCountForAReviewer(null) >= 0) {
+            reviews = MyTasksStore.getMyTasksCount(null,TaskType.Review);
+        //}
+    }
+    if (isAccessRequest) {
+        CollectionCriteria criteria = new CollectionCriteria();
+        //criteria.addFilterCriteria(new FilterCriteria("ID", Operator.EQUAL, user.getID()));
+        //if(ChangeRequestObjectStore.getChangeRequestApprovalsCount(criteria, null) >= 0) {
+            approvals = MyTasksStore.getMyTasksCount(null, TaskType.Approval);
+        //}
+        //if(ChangeRequestObjectStore.getChangeRequestActivitiesCount(criteria, null) >= 0) {
+            activities = MyTasksStore.getMyTasksCount(null,TaskType.Activity);
+        //}
+        requests = user.getPendingChangeRequestsCount_requestor(null);
+    }
+    if (isRules) {
+        //if(MyTasksStore.getMyTasksCount(null,TaskType.Violation) >= 0) {
+            violations = MyTasksStore.getMyTasksCount(null,TaskType.Violation);
+        //}
+    }
+    int linkCount = 0;
+%>
+		<div class="container">
+			<div class="header">
+				
+			</div>
+			<div class="main">
+				<div class="first">
+					<div id="block1">
+						<div id="block1_div">
+							<div id="block1_head">
+								<div style="font-family: Arial Rounded MT;font-weight:bold;font-size: 12px;color: #000000;letter-spacing: 0.16px;padding-top:6%;float:left;">
+									<b>JOINER</b>
+								</div>
+								<img src="https://accsys-dev.testweb.bp.com/aveksa/custom/images/joiner icon.png" width="48.6px" height="46.1px"  style="float:right;"/>		
+ 							</div>
+							
+							<div class="block_div_body" >
+								<div class="body_links1" style="">
+									<a class="anc_body_links" href="http://www.google.com">Add User to BP for the very first time</a>		
+								</div>
+								<div class="body_links"  >
+									<a class="anc_body_links" href="http://www.google.com">Move Contractor to a permanent position</a>
+								</div>
+								<div class="body_links1"  >
+									<a class="anc_body_links1"  ></a>
+								</div>
+								<div class="body_links"  >
+									<a class="anc_body_links1"  ></a>
+								</div>
+							</div>	
+						</div>
+					</div>
+					<div id="block2">
+						<div id="block2_div">
+							<div id="block2_head" >
+								<div style="padding-top:6%;width:100px;float:left;font-family:Arial Rounded MT;font-weight:bold;font-size: 12px;color: #282A2A;letter-spacing: 0.12px;">
+									<b>MOVER/UPDATE</b>
+								</div>
+								<img src="https://accsys-dev.testweb.bp.com/aveksa/custom/images/mover icon.png" width="48.6px" height="46.1px"  style="float:right;"/>
+							</div>
+							<div class="block_div_body" >
+								
+									<div class="body_links1"><a class="anc_body_links" href="http://www.google.com">Move a User to different team</a></div>
+									<div class="body_links" ><a class="anc_body_links" href="http://www.google.com">Change a Users Live Manager</a></div>
+									<div class="body_links1"><a class="anc_body_links"  >Change my/another Users Status</a></div>
+									<div class="body_links"><a class="anc_body_links1"  ></a></div>
+							</div>
+						</div>
+					</div>
+					<div id="block3">
+						<div id="block3_div">
+							<div id="block3_head">
+								<div style="padding-top:6%;width:75%;float:left;font-family: Arial Rounded MT;font-weight:bold;font-size: 12px;color: #282A2A;letter-spacing: 0.16px;">
+									<b>LEAVER</b>
+								</div>
+								<img src="https://accsys-dev.testweb.bp.com/aveksa/custom/images/leaver icon.png" width="48.6px" height="46.1px"  style="float:right;"/>
+							</div>
+							<div class="block_div_body" >
+								<div class="body_links1" ><a class="anc_body_links" href="http://www.google.com">A User is leaving the team and will no longer need ACCSYS</a></div>
+								<div class="body_links"><a class="anc_body_links" href="http://www.google.com">A User is leaving the Company and all access needs removing</a></div>
+								<div class="body_links1"><a class="anc_body_links1"  ></a></div>
+								<div class="body_links"><a class="anc_body_links1"  ></a></div>
+							</div>
+							
+						</div>
+					</div>
+					<div id="block4">
+						<div id="block4_div">
+							<div id="block4_head">
+								<div style="padding-top:6%;width:77%;float:left;font-family: Arial Rounded MT;font-weight:bold;color: #000000;letter-spacing: 0.12px;font-size:12px;">
+									<b>APPLICATION ACCESS</b>
+								</div>
+								<img src="https://accsys-dev.testweb.bp.com/aveksa/custom/images/general management icon.png" width="48.6px" height="46.1px"  style="float:right;"/>
+							</div>
+							<div class="block_div_body" >
+								<div class="body_links1" ><a class="anc_body_links" href="http://www.google.com">Change Role Definitions</a></div>
+								<div class="body_links" ><a class="anc_body_links" href="http://www.google.com">Change Application Access for groups of users</a></div>
+								<div class="body_links1" ><a class="anc_body_links" href="http://www.google.com">Average Block Leave for myself/another User</a></div>
+								<div class="body_links"><a class="anc_body_links1"  ></a></div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<div class="second">
+				<% linkCount = 0; %>
+					<div id="block5">
+						<div class="block5_main1">
+						<% if (isAccessRequest && approvals!=null) { %>
+                			<% linkCount++; %>
+							<% if (approvals==0){%>
+							<div class="block5_count" style="background-color:#AFAFAF;"><p style="margin-top:4px;"><%=approvals%></p></div>
+							<%}
+							else {%>
+							<div class="block5_count" ><p style="margin-top:4px;"><%=approvals%></p></div>
+							<%
+							}
+							%>	
+							<div class="block5_text" style="text-decoration:none;font-family: Arial Rounded MT;font-weight:bold;font-size: 14px; color: #000000; letter-spacing: 0.18px;"><b><a id='APPROVALS_LINK' style="text-decoration:none;color:#000000 ;"  href="<%= new ChangeRequestMyApprovalsSummaryPageData().getURL(request, user) %>" >Approvals</a></b></div>
+						<%
+						}
+						%>
+						</div>
+						<div class="block5_main1">
+							<div class="block5_count"><p style="margin-top:4px;">10</p></div>
+							<div class="block5_text" style="font-family: Arial-BoldMT;font-size: 14px; color: #000000; letter-spacing: 0.18px;"><b>My Requests</b></div>
+						</div>
+						<div class="block5_main2">
+							<% if (isAccessRequest && activities!=null) { %>
+							<% linkCount++; %>
+							<% if (activities==0){%>
+							<div class="block5_count" style="background-color:#AFAFAF;"><p style="margin-top:4px;"><%=activities%></p></div>
+							<%}
+							else {%>
+							<div class="block5_count" ><p style="margin-top:4px;"><%=activities%></p></div>
+							<%
+							}
+							%>
+							<div class="block5_text" style="text-decoration:none;font-family: Arial Rounded MT;font-weight:bold;font-size: 14px; color: #000000; letter-spacing: 0.18px;"><b><a id='ACTIVITIES_LINK' style="text-decoration:none;color:#000000 ;" href="<%= new ChangeActivityMySummaryPageData().getURL(request, user) %>">Activities</a></b></div>
+						<%
+						}
+						%>
+						</div>
+						<div class="block5_main2">
+							<div class="block5_count" style="background-color:#AFAFAF;"><p style="margin-top:4px;">0</p></div>
+							<div class="block5_text" style="font-family: Arial-BoldMT;font-size: 14px; color: #000000; letter-spacing: 0.18px;"><b>My Users</b></div>
+						</div>
+						<div class="block5_main2">
+							<% if (isReviews && reviews!=null) { %>
+							<% linkCount++; %>
+							<% if (reviews==0){%>
+							<div class="block5_count" style="background-color:#AFAFAF;"><p style="margin-top:4px;"><%=reviews%></p></div>
+							<%}
+							else {%>
+							<div class="block5_count" ><p style="margin-top:4px;"><%=reviews%></p></div>
+							<%
+							}
+							%>
+							<div class="block5_text" style="text-decoration:none;font-family: Arial Rounded MT;font-weight:bold;font-size: 14px; color: #000000; letter-spacing: 0.18px;"><b><a id='REVIEWS_LINK' style="text-decoration:none;color:#000000 ;"  href="<%= new ReviewSummaryPageData().getURL(request, user) %>">Reviews</a></b></div>
+						<%
+						}
+						%>
+						</div>
+						<div class="block5_main2">
+							<div class="block5_count" style="background-color:#AFAFAF;"><p style="margin-top:4px;">0</p></div>
+							<div class="block5_text" style="font-family: Arial-BoldMT;font-size: 14px; color: #000000; letter-spacing: 0.18px;"><b>My Profile</b></div>
+						</div>
+						<div class="block5_main2">
+							<% if (isRules && violations!=null) { %>
+							<% linkCount++; %>
+							<% if (violations==0){%>
+							<div class="block5_count" style="background-color:#AFAFAF;"><p style="margin-top:4px;"><%=violations%></p></div>
+							<%}
+							else {%>
+							<div class="block5_count" ><p style="margin-top:4px;"><%=violations%></p></div>
+							<%
+							}
+							%>
+							<div class="block5_text" style="text-decoration:none;font-family: Arial Rounded MT;font-weight:bold;font-size: 14px; color: #000000; letter-spacing: 0.18px;"><b><a id='VIOLATIONS_LINK' style="text-decoration:none;color:#000000 ;" href="<%= new MyExceptionsSummaryPageData().getURL(request, user) %>" >Violations</a></b></div>
+						<%
+						}
+						%>
+						</div>
+						<div class="block5_main2">
+							<div class="block5_count" style="background-color:#AFAFAF;"><p style="margin-top:4px;">0</p></div>
+							<div class="block5_text" style="font-family: Arial-BoldMT;font-size: 14px; color: #000000; letter-spacing: 0.18px;"><b>My Access</b></div>
+						</div>
+					</div>
+					<!--<div id="block6">
+						<div id="block5_head" style="border-bottom:3px solid #E0E0E0;"><b>MRL CERTIFICATIONS</b></div>
+						<div style="float:left;width:45%;padding-top:4%;padding-left:4%;">Approval Due</div>
+						<div style="float:left;width:46%;padding-top:4%;padding-left:4%;">Next Certifications in <b>90</b> Days</div>
+						<div style="float:left;width:45%;padding-top:4%;padding-left:4%;"><button class="block6_btn">Review & Clarify</button></div>
+						<div style="float:left;width:46%;padding-top:4%;padding-left:4%;"><button class="block6_btn">Send Reminder</button></div>	
+					</div>-->
+					<div id="block7">
+						<div id="block7_head" style="border-bottom:3px solid #E0E0E0;font-family: Arial Rounded MT;font-weight:bold;font-size: 12px;color: #000000;letter-spacing: 0.16px;"><b>BLOCK LEAVE</b></div>
+						<div style="padding-top:1.5%;padding-left:3%;width:96%;height:35px;">
+							<button style="float:left;width:47%;height:30px;background-color:#009900;border:none;font-family: Arial Rounded MT;font-weight:bold;font-size: 14px;color: #FFFFFF;letter-spacing: 0.18px;">Book Block Leave</button>
+							<button style="float:left;width:47%;height:30px;background-color:#EEEEEE;margin-left:3%;border: 1px solid #D9D9D9;font-family: Arial Rounded MT;font-weight:bold;font-size: 14px;color: #282A2A;letter-spacing: 0.18px;"><b>Cancel Block Leave</b> <i></i></button>
+						</div>
+						<div style="width:96%;height:40px;">
+							<div style="float:left;width:4%;height:60%;background-color:#D0021B;margin-top:1.5%;margin-left:3%;border-radius:60px;text-align:center;color:#FFFFFF;font-family:Arial Rounded MT;font-weight:bold;font-size:13px;letter-spacing: 0.17px;"><p style="margin-top:4px;">10</p></div>
+							<div style="float:left;width:41%;padding-top:2.3%;padding-left:2%;font-family: Arial Rounded MT;font-weight:bold; font-size: 14px;color: #000000;letter-spacing: 0.18px;"><b>Completed</b></div>
+							<div style="float:left;width:41%;padding-top:2.3%;padding-left:4%; font-family: Arial Rounded MT;font-weight:bold; font-size: 14px;color: #000000;letter-spacing: 0.18px;"><b>Book Team Member Block Leave</b></div>
+						</div>
+						<div style="width:96%;height:40px;">
+							<div style="float:left;width:4%;height:60%;background-color:#D0021B;margin-top:1.2%;margin-left:3%;border-radius:60px;text-align:center;color:#FFFFFF;font-family:Arial Rounded MT;font-weight:bold;font-size:13px;letter-spacing: 0.17px;"><p style="margin-top:4px;">10</p></div>
+							<div style="float:left;width:41%;padding-top:2%;padding-left:2%;font-family: Arial Rounded MT;font-weight:bold; font-size: 14px;color: #000000;letter-spacing: 0.18px;"><b>Booked</b></div>
+							<div style="float:left;width:41%;padding-top:2%;padding-left:4%; font-family: Arial Rounded MT;font-weight:bold; font-size: 14px;color: #000000;letter-spacing: 0.18px;"><b>Cancel Team Member Block Leave</b></div>
+						</div>
+						<div style="width:96%;height:40px;">
+							<div style="float:left;width:4%;height:60%;background-color:#D0021B;margin-top:1.2%;margin-left:3%;border-radius:60px;text-align:center;color:#FFFFFF;font-family:Arial Rounded MT;font-weight:bold;font-size:13px;letter-spacing: 0.17px;"><p style="margin-top:4px;">10</p></div>
+							<div style="float:left;width:41%;padding-top:1.8%;padding-left:2%;font-family: Arial Rounded MT;font-weight:bold; font-size: 14px;color: #000000;letter-spacing: 0.18px;"><b>Not Booked</b></div>
+							<div style="float:left;width:41%;padding-top:1.8%;padding-left:4%; font-family: Arial Rounded MT;font-weight:bold; font-size: 14px;color: #000000;letter-spacing: 0.18px;"><b>Request Block Leave Excemption</b></div>
+						</div>
+						<div style="width:96%;height:40px;">
+							<div style="float:left;width:4%;height:60%;background-color:#D0021B;margin-top:1%;margin-left:3%;border-radius:60px;text-align:center;color:#FFFFFF;font-family:Arial Rounded MT;font-weight:bold;font-size:13px;letter-spacing: 0.17px;"><p style="margin-top:4px;">10</p></div>
+							<div style="float:left;width:41%;padding-top:1.5%;padding-left:2%;font-family: Arial Rounded MT;font-weight:bold; font-size: 14px;color: #000000;letter-spacing: 0.18px;"><b>Not Required</b></div>
+							<div style="float:left;width:41%;padding-top:1.5%;padding-left:4%; font-family: Arial Rounded MT;font-weight:bold; font-size: 14px;color: #000000;letter-spacing: 0.18px;"><b>Cancel Block Leave Excemption</b></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

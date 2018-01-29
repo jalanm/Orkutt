@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!--// #007833 for first icon --- #F5A623 -- for second icon -- #D0021B - For third -- #4890E2 - For fourth -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dashboard</title>
+		<style>	
+			body{
+				font-family:"Arial";
+			}
+			.header{
+				height:4%;
+			}
+			.header>h3{
+				padding-top:1%;
+			}
+			.main{
+				background-color:#BFC0CA;
+				padding-top:3%;
+				padding-bottom:0.2%;
+				width:100%;
+			}
+			.first{
+				height:300px;
+				margin-bottom:4%;
+			}
+			.second{
+				height:200px;
+				font-size:13px;
+			}
+			#block1{
+				margin-left:1%;
+				height:300px;
+				width:24%;
+				float:left;
+				background-color:#F9F9F9;
+			}
+			#block1_div{
+				padding-top:8px;
+				background-color:green;
+				height:45px;
+			}
+			#block2{
+				margin-left:0.2%;
+				height:300px;
+				width:24%;
+				float:left;
+				background-color:#F9F9F9;
+			}
+			#block2_div{
+				padding-top:8px;
+				background-color:orange;
+				height:45px;
+			}
+			#block3{
+				margin-left:0.2%;
+				height:300px;
+				width:24%;
+				float:left;
+				background-color:#F9F9F9;
+			}
+			#block3_div{
+				padding-top:8px;
+				background-color:red;
+				height:45px;
+			}
+			#block4{
+				margin-left:0.2%;
+				height:300px;
+				width:25%;
+				float:left;
+				background-color:#F9F9F9;
+			}
+			#block4_div{
+				padding-top:8px;
+				background-color:blue;
+				height:45px;
+			}
+			#block5{
+				margin-left:1%;
+				height:160px;
+				width:24%;
+				float:left;
+				background-color:#FFFFFF;
+			}
+			#block6{
+				margin-left:3px;
+				height:160px;
+				width:37%;
+				float:left;
+				background-color:#FFFFFF;
+			}
+			#block7{
+				margin-left:3px;
+				height:160px;
+				width:36.2%;
+				float:left;
+				background-color:#FFFFFF;
+			}
+			.links{
+				background-color:darkgray;
+				text-align:center;
+				height:42px;	
+			}
+			.links >a{
+				padding-top:10px;
+				display:block;
+				height:30px;
+				text-decoration:none;
+				font-weight:bold;
+				color:white;
+				font-size:18px;
+			}
+			.links a:hover{
+				background-color:dimgray;
+			}
+			.block_div_body{
+				height:205px;
+				overflow:auto;
+			}
+			#block1_head{
+				
+				padding-left:20px;
+				font-size:15px;
+				height:45px;
+				width:93.85%;
+				background-color:white;
+				
+			}
+			#block2_head{
+				padding-left:20px;
+				font-size:15px;
+				height:45px;
+				width:93.65%;
+				background-color:white;
+			}
+			#block3_head{
+				padding-left:20px;
+				font-size:15px;
+				height:45px;
+				width:93.8%;
+				background-color:white;
+			}
+			#block4_head{
+				padding-left:20px;
+				font-size:14px;
+				height:45px;
+				width:94%;
+				background-color:white;
+			}
+			#block5_head{
+				padding-top:15px;
+				padding-left:20px;
+				font-size:15px;
+				height:35px;
+				width:95.7%;
+				background-color:#F3F3F3;
+			}
+			#block7_head{
+				padding-top:15px;
+				padding-left:20px;
+				font-size:15px;
+				height:35px;
+				width:95.7%;
+				background-color:#F3F3F3;
+			}
+			.block_div_body .body_links{
+				background-color:#FFF;
+				text-align:center;
+				height:40px;
+				float:left;				
+			}
+			.body_links >a{
+				padding-top:15px;
+				padding-left:20px;
+				padding-right:20px;
+				padding-bottom:8px;
+				display:block;
+				height:30px;
+				text-decoration:none;
+				color:Black;
+				font-size:13px;
+				border-bottom-style:solid;
+				border-bottom-color:#F2F2F2;
+			}
+			.body_links> a:hover{
+				background-color:#505050;
+				color:white;
+			}
+			.block5_main1{
+				float:left;
+				width:41%;
+				height:30%;
+				margin-top:7.5%;
+				margin-left:5%;
+				padding-left:3%;
+			}
+			.block5_main2{
+				float:left;
+				width:41%;
+				height:30%;
+				margin-top:6%;
+				margin-left:5%;
+				padding-left:3%;
+				padding-right:1%;
+			}
+			.block5_text{
+				float:left;
+				width:60%;
+				padding-top:9%;
+				padding-left:8%;
+			}
+			.block5_count{
+				float:left;
+				width:21%;
+				height:50%;
+				background-color:red;
+				margin-top:8%;
+				border-radius:50%;
+				text-align:center;
+				color:white;
+			}
+			.block6_btn{
+				width:90%;
+				height:31px;
+				background-color:#009900;
+				border:none;
+				color:white;
+			}
+			ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				background-color: #333;
+			}
+			li {
+				float: left;
+			}
+			li a {
+				display: block;
+				color: white;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+				font-size:13px;
+			}
+			li a:hover {
+				background-color: #111;
+			}
+			.active{
+				color:yellow;
+			}
+			img{
+				float:left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				
+			</div>
+			<div class="main">
+				<div class="first">
+					<div id="block1">
+						<div id="block1_div">
+							<div id="block1_head">
+								<div style="padding-top:10px;width:100px;float:left;">
+									<b>JOINER</b>
+								</div>
+									<img src="av1_1.png" width="48.6px" height="44.5px"  style="float:right;"/>
+									
+ 							</div>
+							
+							<div class="block_div_body body_links" >
+								<a href="http://www.google.com">Add User to BP</a>
+								<a href="http://www.google.com">Move Contractor to a permanent position</a>
+							</div>
+							<div class="links"><a href="http://www.google.com">See More</a></div>
+						</div>
+					</div>
+					<div id="block2">
+						<div id="block2_div">
+							<div id="block2_head" >
+								<div style="padding-top:10px;width:100px;float:left;">
+									<b>LEAVER</b>
+								</div>
+								<img src="av1_1.png" width="48.6px" height="44.5px"  style="float:right;"/>
+							</div>
+							<div class="block_div_body body_links" >
+								<a href="http://www.google.com">Move a User to different team</a>
+								<a href="http://www.google.com">Change a Users Live Manager</a>
+								<a href="http://www.google.com">Change my/another Users Status</a>
+							</div>
+							<div class="links"><a href="http://www.google.com">See More</a></div>
+						</div>
+					</div>
+					<div id="block3">
+						<div id="block3_div">
+							<div id="block3_head">
+								<div style="padding-top:10px;width:100px;float:left;">
+									<b>LEAVER</b>
+								</div>
+									<img src="av1_1.png" width="48.6px" height="44.5px"  style="float:right;"/>
+							</div>
+							<div class="block_div_body body_links" >
+								<a href="http://www.google.com">A User is leaving the team and will no longer need ACCSYS</a>
+								<a href="http://www.google.com">A User is leaving the Company and all access needs removing</a>
+							</div>
+							<div class="links"><a href="http://www.google.com">See More</a></div>
+						</div>
+					</div>
+					<div id="block4">
+						<div id="block4_div">
+							<div id="block4_head">
+								<div style="padding-top:10px;width:200px;float:left;">
+									<b>GENERAL MANAGEMENT</b>
+								</div>
+									<img src="av1_1.png" width="48.6px" height="44.5px"  style="float:right;"/>
+							</div>
+							<div class="block_div_body body_links" >
+								<a href="http://www.google.com">Change Role Definitions</a>
+								<a href="http://www.google.com">Change Application Access for groups of users</a>
+								<a href="http://www.google.com">Average Block Leave for myself/another User</a>
+							</div>
+							<div class="links"><a href="http://www.google.com">See More</a></div>
+						</div>
+					</div>
+				</div>
+				<div class="second">
+					<div id="block5">
+						<div class="block5_main1">
+							<div class="block5_count"><p style="margin-top:4px;">10</p></div>
+							<div class="block5_text"><b>Approvals</b></div>
+						</div>
+						<div class="block5_main1">
+							<div class="block5_count"><p style="margin-top:4px;">10</p></div>
+							<div class="block5_text"><b>Reviews</b></div>
+						</div>
+						<div class="block5_main2">
+							<div class="block5_count"><p style="margin-top:4px;">10</p></div>
+							<div class="block5_text"><b>Activities</b></div>
+						</div>
+						<div class="block5_main2">
+							<div class="block5_count" style="background-color:grey;"><p style="margin-top:4px;">0</p></div>
+							<div class="block5_text"><b>Violations</b></div>
+						</div>
+					</div>
+					<div id="block6">
+						<div id="block5_head" style="border-bottom:3px solid #E0E0E0"><b>MRL CERTIFICATIONS</b></div>
+						<div style="float:left;width:45%;padding-top:4%;padding-left:4%;">Approval Due</div>
+						<div style="float:left;width:46%;padding-top:4%;padding-left:4%;">Next Certifications in <b>90</b> Days</div>
+						<div style="float:left;width:45%;padding-top:4%;padding-left:4%;"><button class="block6_btn">Review & Clarify</button></div>
+						<div style="float:left;width:46%;padding-top:4%;padding-left:4%;"><button class="block6_btn">Send Reminder</button></div>	
+					</div>
+					<div id="block7">
+						<div id="block7_head" style="border-bottom:3px solid #E0E0E0"><b>BLOCK LEAVE</b></div>	
+							<div style="float:left;width:5.5%;height:14%;background-color:red;margin-top:4%;margin-left:2%;border-radius:60%;text-align:center;color:white;"><p style="margin-top:3px;">10</p></div>
+							<div style="float:left;width:45%;padding-top:4.5%;padding-left:2%;"><b>Not Completed</b></div>
+							<div style="padding-top:4%;padding-left:3%;"><button style="width:42%;height:30px;background-color:green;border:none;color:white;">Book Block Leave</button></div>
+							<div style="float:left;width:5.5%;height:14%;background-color:green;margin-top:3%;margin-left:2%;border-radius:50%;text-align:center;color:white;"><p style="margin-top:3px;">30</p></div>
+							<div style="float:left;width:45%;padding-top:3.5%;padding-left:2%;"><b>Completed</b></div>
+							<div style="padding-top:2%;padding-left:3%;"><button style="width:42%;height:30px;background-color:#d0d0d0;border:none;">Cancel Block Leave</button></div>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
