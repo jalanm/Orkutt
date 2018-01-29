@@ -1,0 +1,10 @@
+CumuLogic
+Engine Yard Orchestra
+
+Engine Yard Cloud
+Amazon Elastic Beanstalk
+Heroku
+Force.com
+VMware Cloud Foundry
+Google App Engine
+Microsoft Windows Azure
