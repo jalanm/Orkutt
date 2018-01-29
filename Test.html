@@ -1,0 +1,3165 @@
+<html>
+<head>
+	<title>Menu</title>
+	<style>
+		 
+
+A { 
+  color: black; 
+}
+
+A:hover {
+  color: #1370ab;
+}
+
+body, th, td, button, input, select, textarea {
+  font: 13px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+}
+
+html {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  cursor: default;
+  _overflow-y: auto; /* prevent older IE from always showing the vertical scrollbar space */
+}
+
+button {
+  padding: 0 .5em 0 .5em;
+  _padding: 1 .7em 0 .7em;
+  _width: 1px;  /*fix for IE*/
+  _overflow: visible;  /*fix for IE*/
+  font: 13px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+}
+
+fieldset {
+  cursor: default;
+}
+
+td, input, select, textarea {
+  font: 13px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+}
+
+input[type=text]:focus, textarea:focus {
+  background-color: #FFFEbf;
+}
+
+.MainBody {
+  background: white url(../images/banner.gif) top right no-repeat;
+  padding: 0 0 0 0;
+}
+
+.MainBody2 {
+  background: white url(../images/banner.gif) top right no-repeat;
+  padding: 0 0 0 0;
+}
+
+.OverallContentCell {
+  padding: 0 13px 0 13px;
+}
+
+h2, .h2 {
+    color: black;
+    padding-bottom: 4px;
+    white-space: nowrap;
+    font: bold 22px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+}
+
+h4, .h4 {
+    color: SteelBlue;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap;
+    font: bold 14px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.InfoImage {
+  width: 13px;
+  height: 13px;
+  vertical-align: -1px;
+  border: none;
+}
+
+.InfoLink {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*################################### Main Layout ###################################*/
+
+.Header {
+  width: 100%;
+}
+
+.OuterBorder { /* outer white border */
+}
+
+.InnerBackground { /* inner dark green background */
+}
+
+.Toolbar { /* top app button container */
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 5px;
+  padding-right: 6px;
+  padding-left: 6px;
+  padding-top: 2px;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.Toolbar .ToolbarText {
+  color: black;
+  text-decoration: none;
+}
+
+.Toolbar .LastLogin {
+  font-size: 11px;
+}
+
+.MainUnderbar { /* breadcrumb and current user under the menu tabs */
+  width: 100%;
+  cursor: default;
+}
+
+.MainUnderbar .Breadcrumb {
+  font:bold 13px Arial;
+  width: 100%;
+  padding: 1 0 1 10;
+  text-align: left;
+  color: black;
+}
+
+.MainUnderbar .Breadcrumb a {
+  color: black; 
+  text-decoration: none;
+}
+
+.MainUnderbar .Breadcrumb a:hover {
+  color: #0079C2;
+  text-decoration: underline;
+}
+
+.MainUnderbar .Breadcrumb button {
+  font: 12px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.MainActionButtons { /* table for main page action buttons (top and bottom) */
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+  cursor: default;
+}
+
+.MainCentralTable { /* gray inner container */
+  vertical-align: top;
+  background-color: white;
+}
+
+.NestedCentralTable {
+  background-color: #fff;
+}
+
+.MainContent {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  vertical-align: top;
+  padding: 7 10 0 10;
+  background-color: white;
+}
+
+.MainStandalone {
+  width: 100%;
+  height: 100%;
+  background: #D9E4F3 url(../images/bg-body.gif) top left repeat-x;
+}
+
+.ProgressBar {
+  font: bold 10px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  text-align: center;
+  cursor: default;
+}
+
+img .statusBar {
+  background: white url(../images/percentImage_back.png) top left no-repeat;
+  padding: 0;
+  margin: 5px 0 0 0;
+  background-position: 1px 0;
+}
+
+/*################################### Main Title Bar ###################################*/
+
+.MainTitle {
+  width:100%;
+  height: 23px;
+  cursor: default;
+  text-align: left;
+  border-bottom: 1px solid #5C712D;
+}
+
+.MainTitle .Left {
+  background: #918D7B url(../images/titlebar-left.png) top no-repeat;  /*#918D7B, #A4A08B*/
+  width: 6px;
+}
+
+.MainTitle .Middle {
+  background: #AFC875 url(../images/titlebar-middle.png) top repeat-x;
+  padding: 2px 2px 3px 10px;
+  font: bold 22px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  color: #085590;
+}
+
+.MainTitle .Right {
+  background: #918D7B url(../images/titlebar-right.png) top no-repeat;
+  width: 6px;
+}
+
+.MainTitle .AutoRefresh {
+  background: #AFC875 url(../images/titlebar-middle.png) top repeat-x;
+  font: 12px Arial, sans-serif;
+  color: white;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 2px 2px 3px 10px;
+}
+
+/*################################### Main Menu ###################################*/
+
+.MainMenu {
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+}
+
+.MainMenu td.MenuCell {
+  vertical-align: top;
+  width: 95px;
+}
+
+.MainMenu .Tab {
+  white-space: nowrap;
+  color: black;
+}
+
+.MainMenu .Tab .TabMiddle {
+  width: 100%;
+  text-align: center;
+  background: #48525B url(../images/tabs/main/unsel-middle.gif) top repeat-x;
+  border: none;
+  padding: 3px 12px 3px 12px;
+  color: white;
+  font: bold 14px "Open Sans", Arial, Helvetica, sans-serif
+}
+
+.MainMenu .Tab .TabLeft {
+  background: url(../images/tabs/main/unsel-left.gif) no-repeat;
+  vertical-align: top;
+  padding: 0px;
+  width: 1px;
+}
+
+.MainMenu .Tab .TabRight {
+  background: url(../images/tabs/main/unsel-right.gif) no-repeat;
+  vertical-align: top;
+  padding: 0px;
+  width: 1px;
+}
+
+.MainMenu .DisabledTab {
+    white-space: nowrap;
+}
+
+.MainMenu .DisabledTab .TabMiddle {
+    width: 100%;
+    text-align: center;
+    background: #0b5794;
+    border: 2px solid #3982b5;
+    padding: 3px 12px 3px 12px;
+    color: gray;
+    font: 14px "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+.MainMenu .DisabledTab .TabLeft {
+    background: #0b5794;
+    vertical-align: top;
+    padding: 0px;
+    width: 1px;
+}
+
+.MainMenu .DisabledTab .TabRight {
+    background: #0b5794;
+    vertical-align: top;
+    padding: 0px;
+    width: 1px;
+}
+
+.MainMenu .SelTab {
+  white-space: nowrap;
+}
+
+.MainMenu .SelTab .TabMiddle {
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  background: #48525B url(../images/tabs/main/sel-middle.gif) top repeat-x;
+  border-top: 1px solid #085590;
+  border-bottom: 1px solid #085590;
+  padding: 3px 12px 3px 12px;
+  color: white;
+  font: bold 17px Arial, Helvetica, sans-serif;
+}
+
+.MainMenu .SelTab .TabLeft {
+  background: #48525B url(../images/tabs/main/sel-left.gif) bottom no-repeat;
+  vertical-align: top;
+  padding: 0;
+  width: 1px;
+}
+
+.MainMenu .SelTab .TabRight {
+  background: #197CB3 url(../images/tabs/main/sel-right.gif) bottom no-repeat;
+  vertical-align: top;
+  padding: 0;
+  width: 1px;
+}
+
+.MainMenu .HoverTab {
+  color: white;
+  white-space: nowrap;
+}
+
+.MainMenu .HoverTab .TabMiddle {
+  width: 100%;
+  text-align: center;
+  background: #085590 url(../images/tabs/main/hover-middle.gif) top repeat-x;
+  padding: 3px 12px 3px 12px;
+  color: white;
+  font: bold 14px "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+.MainMenu .HoverTab .TabLeft {
+  background: url(../images/tabs/main/hover-left.gif) no-repeat;
+  vertical-align: top;
+  padding: 0;
+  width: 1px;
+}
+
+.MainMenu .HoverTab .TabRight {
+  background: url(../images/tabs/main/hover-right.gif) no-repeat;
+  vertical-align: top;
+  padding: 0;
+  width: 1px;
+}
+
+.MainMenu .LoadingTab {
+  color: white;
+  white-space: nowrap;
+}
+
+.MainMenu .LoadingTab .TabMiddle {
+  width: 100%;
+  text-align: center;
+  background: #085590 url(../images/tabs/main/loading-middle.gif) top repeat-x;
+  padding: 3px 12px 3px 12px;
+  color: white;
+  font: bold 14px "Open Sans", Arial, Helvetica, sans-serif
+}
+
+.MainMenu .TabMiddle .Arrow {
+  display: none;
+}
+
+.MainMenu .LoadingTab .TabLeft {
+  background: url(../images/tabs/main/loading-left.gif) no-repeat;
+  vertical-align: top;
+  padding: 0px;
+  width: 1px;
+}
+
+.MainMenu .LoadingTab .TabRight {
+  background: url(../images/tabs/main/loading-right.gif) no-repeat;
+  vertical-align: top;
+  padding: 0px;
+  width: 1px;
+}
+
+.MainMenu .Right {
+  background: transparent url(../images/tabs/main/unsel-middle.gif) top repeat-x;
+  filter: "Alpha(opacity=50)";
+  opacity: 0.5;
+  text-align: right;
+}
+
+.MainMenu .Left {
+  background: transparent url(../images/tabs/main/unsel-middle.gif) top repeat-x;
+  filter: "Alpha(opacity=50)";
+  opacity: 0.5;
+  width: 5px;
+}
+
+/*################################### Drop-down Menu ###################################*/
+
+.DropMenuParent {
+  position: relative;
+  z-index: 150;
+}
+
+.DropMenu {
+  display: none;
+  text-align: left;
+  position: absolute;
+  top: 24px;
+  _top: 24px;  /*for IE*/
+  left: -1;
+  min-width: 110px;
+  overflow: visible;
+  white-space: nowrap;
+  z-index: 150;
+  /* round corners for shadow */
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  /* drop shadow */
+  -moz-box-shadow: 3px 3px 5px #aaa;
+  -webkit-box-shadow: 3px 3px 5px #aaa;
+  box-shadow: 3px 3px 5px #aaa;
+  /* border */
+  border-top: 1px solid #000;
+  border-left: 1px solid #BFE6F8;
+  border-right: 1px solid #BFE6F8;
+  border-bottom: 1px solid #BFE6F8;
+  _border-left: 1px solid #999;  /*for IE*/
+  _border-right: 1px solid #999;  /*for IE*/
+  _border-bottom: 1px solid #999;  /*for IE*/
+}
+
+.DropMenu .SelTab {
+  color: #FFDF33;
+}
+
+.DropMenu .Last {
+  /* round corners for shadow */
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.DropMenu .Special {
+  background-color:	rgba(65, 117, 145, 0.93);
+  _background-color: rgb(75, 127, 155);
+}
+
+.DropMenu div a {
+  _width: 100%;
+  display: block;
+  text-align: left;
+  vertical-align: middle;
+  padding: 4px 20px 4px 10px;
+  font-size: 13px;
+  overflow: visible;
+  text-decoration: none;
+  color: white;
+  /* background */
+  background-color:	rgba(15, 52, 95, 0.90);
+  _background-color: rgb(31, 77, 128);
+  /* border */
+  border-left: 1px solid #33639f;
+  border-right: 1px solid #33639f;
+  border-bottom: 1px solid #33639f;
+}
+
+.DropMenu div a:hover {
+  _width: 100%;
+  display: block;
+  text-align: left;
+  vertical-align: middle;
+  padding: 4px 20px 4px 10px;
+  font-size: 13px;
+  overflow: visible;
+  text-decoration: none;
+  color: #FFDF33;
+  /* background */
+  background: black;
+  /* border */
+  border-left: 1px solid #33639f;
+  border-right: 1px solid #33639f;
+  border-bottom: 1px solid #33639f;
+}
+
+/*################################### Top Menu ###################################*/
+
+.TopMenu {
+  font-size: 14px;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+}
+.TopMenu .Tab {
+  white-space: nowrap;
+  cursor: pointer;
+  border-bottom: 1px solid #6CABE3;
+}
+.TopMenu .Tab .TabMiddle {
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #aaaaaa;
+  background: #cccccc url(../images/tabs/unsel-middle.gif) top repeat-x;
+  padding: 3px;
+  padding-right: 5px;
+  padding-left: 5px;
+  font: bold 12px Arial, Helvetica, sans-serif;
+}
+.TopMenu .Tab .TabLeft {
+  background: url(../images/tabs/unsel-left.gif) top right no-repeat;
+  vertical-align: top;
+  padding: 0px;
+  width: 5px;
+  padding-left: 1px;
+}
+.TopMenu .Tab .TabRight {
+  background: url(../images/tabs/unsel-right.gif) no-repeat;
+  vertical-align: top;
+  padding: 0px;
+  width: 5px;
+  padding-right: 1px;
+}
+
+.TopMenu .SelTab {
+  color: black;
+  white-space: nowrap;
+  cursor: pointer;
+  border-bottom: 1px solid #6CABE3;
+}
+
+.TopMenu .SelTab .TabMiddle {
+  width: 100%;
+  text-align: center;
+  background: #f0f0f0 url(../images/tabs/top/sel-middle.gif) top repeat-x;
+  padding: 3px;
+  padding-right: 5px;
+  padding-left: 5px;
+  font: bold 12px Arial, Helvetica, sans-serif;
+}
+
+.TopMenu .SelTab .TabLeft {
+  background: url(../images/tabs/top/sel-left.gif) top right no-repeat;
+  vertical-align: top;
+  padding: 0px;
+  width: 7px;
+  padding-left: 2px;
+}
+
+.TopMenu .SelTab .TabRight {
+  background: url(../images/tabs/top/sel-right.gif) no-repeat;
+  vertical-align: top;
+  padding: 0px;
+  width: 7px;
+  padding-right: 2px;
+}
+
+.TopMenu .HoverTab {
+  white-space: nowrap;
+  cursor: pointer;
+  border-bottom: 1px solid #5BA0DF;
+}
+
+.TopMenu .HoverTab .TabMiddle {
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #4da2e4;
+  background: #aed4ef url(../images/tabs/hover-middle.gif) top repeat-x;
+  padding: 3px;
+  padding-right: 5px;
+  padding-left: 5px;
+  font: bold 12px Arial, Helvetica, sans-serif;
+}
+
+.TopMenu .HoverTab .TabLeft {
+  background: url(../images/tabs/hover-left.gif) top right no-repeat;
+  vertical-align: top;
+  padding: 0px;
+  width: 5px;
+  padding-left: 1px;
+}
+
+.TopMenu .HoverTab .TabRight {
+  background: url(../images/tabs/hover-right.gif) no-repeat;
+  vertical-align: top;
+  padding: 0px;
+  width: 5px;
+  padding-right: 1px;
+}
+
+.TopMenu .LoadingTab {
+  white-space: nowrap;
+  cursor: pointer;
+  border-bottom: 1px solid #6CABE3;
+}
+
+.TopMenu .LoadingTab .TabMiddle {
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #95B1CB;
+  background: #aed4ef url(../images/tabs/hover-middle.gif) top repeat-x;
+  padding: 3px;
+  padding-right: 5px;
+  padding-left: 5px;
+  border-top: 1px dashed green;
+  font: bold 12px Arial, Helvetica, sans-serif;
+}
+
+.TopMenu .LoadingTab .TabLeft {
+  background: url(../images/tabs/hover-left.gif) top right no-repeat;
+  vertical-align: top;
+  padding: 0px;
+  width: 5px;
+  padding-left: 1px;
+}
+
+.TopMenu .LoadingTab .TabRight {
+  background: url(../images/tabs/hover-right.gif) no-repeat;
+  vertical-align: top;
+  padding: 0px;
+  width: 5px;
+  padding-right: 1px;
+}
+
+.TopMenu .Right {
+  /*width: 100%;*/
+  border-bottom: 1px solid #6CABE3;
+}
+.TopMenu .Left {
+  width: 1px;
+  border-bottom: 1px solid #6CABE3;
+}
+
+/*################################### Dialog Menu ###################################*/
+
+.DialogMenu {
+  color: black;
+  font-size: 14px;
+  text-align: center;
+}
+
+.DialogMenu .Tab {
+  cursor: pointer;
+}
+
+.DialogMenu .Tab .TabMiddle {
+  text-align: center;
+  border-top: 1px solid #aaaaaa;
+  background: #cccccc url(../images/tabs/unsel-middle.gif) top repeat-x;
+  padding: 3px;
+  padding-right: 5px;
+  padding-left: 5px;
+  font: bold 12px Arial, Helvetica, sans-serif;
+}
+
+.DialogMenu .Tab .TabLeft {
+  background: url(../images/tabs/unsel-left.gif) no-repeat;
+  vertical-align: top;
+  padding: 0px;
+  width: 5px;
+}
+
+.DialogMenu .Tab .TabRight {
+  background: url(../images/tabs/unsel-right.gif) no-repeat;
+  vertical-align: top;
+  padding: 0px;
+  width: 5px;
+  padding-right: 2px;
+}
+
+.DialogMenu .DisabledTab {
+    cursor: default;
+}
+
+.DialogMenu .DisabledTab .TabMiddle {
+    text-align: center;
+    border-top: 1px solid #aaaaaa;
+    background: #cccccc url(../images/tabs/unsel-middle.gif) top repeat-x;
+    padding: 3px;
+    padding-right: 5px;
+    padding-left: 5px;
+    font: bold 12px Arial, Helvetica, sans-serif;
+    color: gray;
+}
+
+.DialogMenu .DisabledTab .TabLeft {
+    background: url(../images/tabs/unsel-left.gif) no-repeat;
+    vertical-align: top;
+    padding: 0px;
+    width: 5px;
+}
+
+.DialogMenu .DisabledTab .TabRight {
+    background: url(../images/tabs/unsel-right.gif) no-repeat;
+    vertical-align: top;
+    padding: 0px;
+    width: 5px;
+    padding-right: 2px;
+}
+
+.DialogMenu .SelTab {
+  color: black;
+}
+
+.DialogMenu .SelTab .TabMiddle {
+  text-align: center;
+  background: #f0f0f0 url(../images/tabs/top/sel-middle.gif) top repeat-x;
+  padding: 3px;
+  padding-right: 5px;
+  padding-left: 5px;
+  font: bold 12px Arial, Helvetica, sans-serif;
+}
+
+.DialogMenu .SelTab .TabLeft {
+  background: url(../../../images/tabs/top/sel-left.gif) top right no-repeat;
+  vertical-align: top;
+  padding: 0px;
+  width: 7px;
+  padding-left: 2px;
+}
+
+.DialogMenu .SelTab .TabRight {
+  background: url(../images/tabs/top/sel-right.gif) no-repeat;
+  vertical-align: top;
+  padding: 0px;
+  width: 7px;
+  padding-right: 2px;
+}
+
+.DialogMenu .SelTab .Blue,
+.DialogMenu .SelTab .Brown {
+  color: white;
+}
+
+.DialogMenu .HoverTab {
+  cursor: pointer;
+}
+
+.DialogMenu .HoverTab .TabMiddle {
+  text-align: center;
+  border-top: 1px solid #4da2e4;
+  background: #aed4ef url(../images/tabs/hover-middle.gif) top repeat-x;
+  padding: 3px;
+  padding-right: 5px;
+  padding-left: 5px;
+  font: bold 12px Arial, Helvetica, sans-serif;
+}
+
+.DialogMenu .HoverTab .TabLeft {
+  background: url(../images/tabs/hover-left.gif) no-repeat;
+  vertical-align: top;
+  padding: 0px;
+  width: 5px;
+}
+
+.DialogMenu .HoverTab .TabRight {
+  background: url(../images/tabs/hover-right.gif) no-repeat;
+  vertical-align: top;
+  padding: 0px;
+  width: 5px;
+  padding-right: 2px;
+}
+
+.DialogMenu .LoadingTab {
+  cursor: pointer;
+}
+
+.DialogMenu .LoadingTab .TabMiddle {
+  text-align: center;
+  border-top: 1px dashed green;
+  background: #aed4ef url(../images/tabs/hover-middle.gif) top repeat-x;
+  padding: 3px;
+  padding-right: 5px;
+  padding-left: 5px;
+  font: bold 12px Arial, Helvetica, sans-serif;
+}
+
+.DialogMenu .LoadingTab .TabLeft {
+  background: url(../images/tabs/hover-left.gif) no-repeat;
+  vertical-align: top;
+  padding: 0px;
+  width: 5px;
+}
+
+.DialogMenu .LoadingTab .TabRight {
+  background: url(../images/tabs/hover-right.gif) no-repeat;
+  vertical-align: top;
+  padding: 0px;
+  width: 5px;
+  padding-right: 2px;
+}
+
+.DialogMenu .Left {
+  width: 1px;
+}
+
+/*################################### Dialog ###################################*/
+
+.Dialog {
+  height: 100%;
+  width: 100%;
+  background-color: #ECE9DF;
+}
+
+.Dialog_inline {
+  background-color: white;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.DialogFrame_inline {
+  background-color: white;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 1px 1px 10px #555;
+  -webkit-box-shadow: 1px 1px 10px #555;
+  box-shadow: 1px 1px 10px #555;
+  /*_border-right: 3px inset #999;*/
+  /*_border-bottom: 3px inset #999;*/
+  /*-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#999999')";*/ /*IE 8*/
+  /*filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#999999');*/ /*IE 5-7*/
+}
+
+.Dialog_dropdown {
+  background-color: white;
+  /* round borders */
+  -moz-border-radius-bottomleft: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  -moz-border-radius-bottomright: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.DialogFrame_dropdown {
+  background-color: white;
+  /* round borders */
+  -moz-border-radius-bottomleft: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  -moz-border-radius-bottomright: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  /* drop shadow */
+  -moz-box-shadow: 3px 3px 4px #aaa;
+  -webkit-box-shadow: 3px 3px 4px #aaa;
+  box-shadow: 3px 3px 4px #aaa;
+  _border-right: 3px inset #999;
+  _border-bottom: 3px inset #999;
+}
+
+.Dialog .Title {
+  font-size: 14px;
+  height: 22px;
+  text-align: left;
+  vertical-align: middle;
+  background: #B0D6F7 url(../images/dialog-header.gif) top repeat-x;
+  border-bottom: 1px solid #95B7EE;
+  padding: 2 2 2 3;
+}
+
+.Dialog .Title_inline {
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
+  -moz-border-radius-topright: 10px;
+  -webkit-border-top-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.Dialog .Title .Text {
+  font: 14px "Open Sans", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  width: 100%;
+  padding: 3px;
+}
+
+.Dialog .Title img {
+  vertical-align: middle;
+}
+
+.Dialog .Header {
+  font-size: 14px;
+  height: 20px;
+  text-align: left;
+  vertical-align: middle;
+  background: none;
+}
+.Dialog .Footer {
+  height: 37px;
+  width: 100%;
+  text-align: right;
+  white-space:nowrap;
+}
+
+.DialogFooter {
+  height: 37px;
+  width: 100%;
+  text-align: right;
+  white-space:nowrap;
+}
+
+.DialogLeft {
+  width: 5px;
+}
+
+.DialogRight {
+  width: 5px;
+}
+
+.Dialog .ContentArea {
+  border: 1px solid #999;
+  background-color: white;
+  font-size: 13px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.Dialog .ContentArea_inline {
+  border: none;
+}
+
+.DialogContent {
+  width: 100%;
+  height: 100%;
+  font-size: 13px;
+  vertical-align: top;
+  padding: 7px;
+  background-color: white;
+}
+
+.Dialog_inline_resize {
+  border: 2px solid #555;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/*################################ Page Divider ################################*/
+
+.MainDivider { /* horizontal dividing line for content */
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  cursor: default;
+  border-bottom: 1px solid #bedafb;
+}
+
+.MainDivider_Table { /* horizontal dividing line for table content */
+  width: 100%;
+  margin-top: 10px;
+  cursor: default;
+}
+
+.MainDivider_Review { /* horizontal dividing line for reviews content */
+  width: 100%;
+  margin-top: 2px;
+  margin-bottom: 0;
+  cursor: default;
+  border-bottom: 1px solid #bedafb;
+}
+
+.MainDividerText {
+  font: 13px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  color: black;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.MainDividerLeft {
+  width: 1px;
+  padding-left: 10px;
+}
+
+.MainDividerRight {
+}
+
+/*################################ Form/Content ################################*/
+
+.AttrName { /* attribute display name */
+  font: bold 12px Arial, Helvetica, sans-serif;
+  color: #447EAE;
+  width: 120px;
+  cursor: default;
+  text-align: right;
+  vertical-align: top;
+  padding-bottom: 3px;
+  padding-top: 4px;
+  padding-right: 10px;
+  border-bottom: 1px solid #ECECEC;
+}
+
+.AttrName_Even {
+  color: #4A4A56;
+}
+
+.AttrName_Odd {
+  color: #447EAE;
+}
+
+.AttrValue { /* attribute display value */
+  text-align: left;
+  vertical-align: middle;
+  font-size: 13px;
+  padding-bottom:3px;
+  padding-top: 3px;
+  padding-left: 5px;
+  padding-right: 10px;
+  border-bottom: 1px solid #ECECEC;
+}
+
+.GenericInputName {
+  text-align: right;
+  font-size: 12px;
+}
+
+.InputSelectableField {
+  vertical-align: top;
+  width: 24px;
+}
+
+.InputName { /* editable input field Name cell */
+  color: black;
+  font-size: 12px;
+  width: 120px;
+  cursor: default;
+  text-align: right;
+  vertical-align: top;
+  padding-top: 4px;
+}
+
+.InputNameText { /* Just the text styles of class InputName */
+  color: #3c719b;
+  font-size: 12px;
+  cursor: default;
+}
+
+.InputSpace { /* Style for space between InputName and InputValue cells */
+  width:10px;
+}
+
+.InputValue { /* editable input field Value cell */
+  text-align: left;
+  vertical-align: middle;
+  font-size: 13px;
+}
+
+.InputValueFld { /* editable input component */
+  vertical-align: middle;
+  font: 13px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.InputError {
+  text-align: left;
+  vertical-align: top;
+  color: red;
+  font-size: 13px;
+}
+
+.Text {
+  font-size: 13px;
+}
+
+.TextBold {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.Legend {
+  font-size: 13px;
+  color: SteelBlue;
+  cursor: default;
+}
+
+.VersionHeader {
+  font-size: 13px;
+  text-align: center;
+  padding:4px 4px 13px 4px;
+  border-bottom: 1px solid gray;
+  margin-bottom: 13px;
+}
+
+.ConditionSpec {
+  color: #b50000;
+}
+
+.NotificationElt {
+  color: #b50000;
+}
+
+.ReviewText {
+  font-size: 13px;
+  color: SteelBlue;
+}
+
+.PromptText {
+  font-size: 13px;
+  color: SteelBlue;
+}
+
+.StatusBox {
+  border: 1px solid #999;
+  background-color: #f1f1f1;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.styled-text-control {
+  padding: 3px 4px 3px 4px;
+  *padding: 2px;  /* IE7 hack */
+  *height: 20px;  /* IE7 hack */
+  background-color: rgba(173, 240, 255, 0.13);
+  background-image: none;
+  border: 1px solid #aaa;
+  *border: 1px solid #7B9EBD;  /* IE7 hack */
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .125);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .125);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.styled-text-control:focus {
+  border-color: #66afe9;
+  background-color: #FFFEbf;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+.styled-text-control:hover {
+  border-color: #66afe9;
+}
+
+.styled-text-control[disabled] {
+  background-color: #eee;
+}
+
+textarea.styled-text-control {
+  height: auto;
+  overflow: auto;
+}
+
+fieldset {
+  padding: .35em .625em .75em;
+  margin: 0 2px;
+  border-radius: 6px;
+}
+
+/*################################### Report Cell ####################################*/
+
+.ReportTitle {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  background: #e2edf6 url(../images/report-titlebar.gif) top repeat-x;
+  border-bottom: 1px solid #bbbbbb;
+}
+
+.ReportBody {
+  background: white;
+  font-size: 12px;
+}
+
+/*################################### Wait Message ###################################*/
+
+.WaitMsgTable {
+  text-align: center;
+  border: 3px ridge white;
+  background-color: white;
+}
+
+.WaitMsgTitle {
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  padding: 2px;
+  background: #bac3d8 url(../images/dialog-header.gif) center no-repeat;
+}
+
+/*################################ Home Page Section #################################*/
+
+.SectionTitle {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  background: #6294C3 url(../images/portlet-header.gif) bottom repeat-x;  
+  color:white;
+}
+
+.SectionHeader {
+  text-align: center;
+  vertical-align: top;
+  padding-top: 2px;
+  background: #DBECFB; 
+  border-bottom: 1px solid #BBDBF4;
+}
+
+.SectionFooter {
+  text-align: center;
+  vertical-align: bottom;
+  padding-bottom: 2px;
+  background: #DBECFB; 
+  border-top: 1px solid #BBDBF4;  
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.SectionLink {
+  text-decoration: none;
+}
+.SectionLink:hover {
+  text-decoration: underline;
+}
+
+/*################################### Misc ###################################*/
+
+.Note {
+  color: gray;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+  padding-bottom:7px;
+}
+
+.NoteText {
+  color: gray;
+  font-size: 13px;
+}
+
+.DialogTitleNote {
+  color: #666;
+  font-size: 13px;
+}
+
+.LongDescriptionText {
+  font-size: 13px;
+  background: #fefee1;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.Instructions {
+  font-size: 13px;
+  color: gray;
+  margin-bottom: 13px;
+}
+
+.menu {
+  position: absolute;
+  top: 21px; /*height of sliding doors button*/
+  background-color: #eef;
+  border: 0;
+  z-index: 100;
+  font: 13px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.menu td {
+  font: 13px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  vertical-align: top;
+  white-space: nowrap;
+  padding: 6px;
+}
+
+#undo {
+  position: absolute;
+  top: 21px; /*height of sliding doors button*/
+  width: 300px;
+  background-color: #efe;
+  border: solid 1px black;
+  padding: 6px;
+  font: 13px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+}
+
+/*############################### Colors ####################################*/
+
+.Brown {
+  color: brown;
+}
+.Blue {
+  color: blue;
+}
+
+/*######################### Statistics Table ################################*/
+
+table.Statistics {
+  border-collapse: collapse;
+}
+
+table.Statistics th {
+  font: bold 12px Arial, Helvetica, sans-serif;
+  color: white;
+  background: #777 url(../images/table/tbl-header.gif) top repeat-x;
+  padding: 3px;
+  border: 1px solid #aaa;
+  border-top: 1px solid #ccc;
+  margin: 0;
+  text-align: right;
+  width: 10ex;
+}
+
+table.Statistics td {
+  font: 13px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  padding: 3px;
+  border: 1px solid #eeeeee;
+  margin: 0;
+  text-align: right;
+}
+
+table.Statistics td.Negative {
+  color: darkred;
+}
+
+table.Statistics td.Positive {
+  color: darkgreen;
+}
+
+table.Statistics td.Category {
+  width: 250px;
+  text-align: left;
+}
+
+table.Statistics tr.Hover {
+  background-color: #E6F5FD;  
+}
+
+/*######################### Role Quality ####################################*/
+
+div.RoleQuality {
+  float: right;
+  text-align: center;
+  border: 1px solid #ccc;
+  background: #eee;
+  padding: 10px;
+  margin-right: 100px;
+}
+
+div.RoleQuality div.Title {
+  font: 14px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #1370ab;
+}
+
+div.RoleQuality div.Value {
+  font: 32px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+}
+
+div.EntitlementHistory {
+  position: relative;
+}
+
+div.EntitlementHistoryTip {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: -30ex;
+  width: 60ex;
+  background: lightgreen;
+  border: 1px solid gray;
+  z-index: 1;
+  padding: 2px;
+}
+
+div.EntitlementHistory:hover div.EntitlementHistoryTip {
+  display: block;
+}
+
+div.EntitlementWarning {
+  position: relative;
+}
+
+div.EntitlementWarningTip {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: -30ex;
+  width: 60ex;
+  background: lightyellow;
+  border: 1px solid gray;
+  z-index: 1;
+  padding: 2px;
+}
+
+div.EntitlementWarning:hover div.EntitlementWarningTip {
+  display: block;
+}
+
+ul#accessRequestActions {
+  margin-top: .5em;
+}
+
+ul#accessRequestActions li {
+  list-style-type: none;
+  margin-bottom: .5em;
+}
+
+/*################################### Buttons ###################################*/
+
+
+.ImgButton {
+  vertical-align: middle;
+  margin: 1px;
+}
+
+/*################################### Color Buttons ###################################*/
+
+span.ColorButton_default,
+span.ColorButton_green,
+span.ColorButton_red,
+span.ColorButton_orange,
+span.ColorButton_yellow {
+  cursor: pointer;
+  vertical-align: middle;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+span.ColorButton_default span.Left,
+span.ColorButton_green span.Left,
+span.ColorButton_red span.Left,
+span.ColorButton_orange span.Left,
+span.ColorButton_yellow span.Left {
+  background: url('../../../images/buttons/color-left-default.gif') no-repeat top left;
+  font: 12px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  vertical-align: middle;
+  padding: 0 4px 0 6px;
+  height: 22px;
+  line-height: 17px;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+span.ColorButton_default span.Right,
+span.ColorButton_green span.Right,
+span.ColorButton_red span.Right,
+span.ColorButton_orange span.Right,
+span.ColorButton_yellow span.Right {
+  background: url('../../../images/buttons/color-right-default.gif') no-repeat top right;
+  font: 12px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  vertical-align: middle;
+  height: 22px;
+  width: 3px;
+  display: inline-block;
+}
+
+span.ColorButton_green span.Left {
+  background: url('../../../images/buttons/color-left-green.gif') no-repeat top left;
+}
+span.ColorButton_green span.Right {
+  background: url('../../../images/buttons/color-right-green.gif') no-repeat top right;
+}
+
+span.ColorButton_red span.Left {
+  background: url('../../../images/buttons/color-left-red.gif') no-repeat top left;
+}
+span.ColorButton_red span.Right {
+  background: url('../../../images/buttons/color-right-red.gif') no-repeat top right;
+}
+
+span.ColorButton_orange span.Left {
+  background: url('../../../images/buttons/color-left-orange.gif') no-repeat top left;
+}
+span.ColorButton_orange span.Right {
+  background: url('../../../images/buttons/color-right-orange.gif') no-repeat top right;
+}
+
+span.ColorButton_yellow span.Left {
+  background: url('../../../images/buttons/color-left-yellow.gif') no-repeat top left;
+}
+span.ColorButton_yellow span.Right {
+  background: url('../../../images/buttons/color-right-yellow.gif') no-repeat top right;
+}
+
+span.ColorButton_disabled {
+  cursor: default;
+  opacity: 0.5;
+  filter: Alpha(opacity=50);
+  zoom: 1;
+}
+
+/*################################### Color Indicators ###################################*/
+
+.ColorIndicator_green,
+.ColorIndicator_red,
+.ColorIndicator_yellow {
+  font: 12px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  padding: 2 10 2 10;
+}
+
+.ColorIndicator_green {
+  background-color: #96e26e;
+}
+
+.ColorIndicator_red {
+  background-color: #fd8888;
+}
+
+.ColorIndicator_yellow {
+  background-color: #fced85;
+}
+
+/*################################### Drop Menu Button ###################################*/
+
+.DropDownButton {
+  position: absolute;
+  top: 21px;
+  _top: 22px;
+  left: 1;
+  z-index: 100;
+  display: none;
+  border: 1px outset #888;
+  border-top: 1px solid #888;
+  border-left: 1px solid #888;
+  background-color: #F3F3F3; 
+  white-space: nowrap;
+  text-align: left;
+  padding: 4px;
+  /* round borders */
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  /* drop shadow */
+  -moz-box-shadow: 3px 3px 4px #aaa;
+  -webkit-box-shadow: 3px 3px 4px #aaa;
+  box-shadow: 3px 3px 4px #aaa;
+  _border-right: 3px inset #999;
+  _border-bottom: 3px inset #999;
+  /*-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#999999')";*/ /*IE 8*/
+  /*filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#999999');*/ /*IE 5-7*/
+    overflow-y: auto;
+}
+
+.DropDownMenu {
+  padding: 0;
+  padding-right: 20px; /*this is to ensure content does not get cut off by vertical scroll bar */
+}
+
+.DropDownMenu a {
+  text-decoration: none;
+}
+
+.DropDownMenu a:hover {
+  text-decoration: underline;
+}
+
+/*################################### Roles ###################################*/
+
+.ReassignBox {
+  position: absolute;
+  top: -0.25in;
+  left: -0.5in;
+  display: block;
+  border: 2px outset #888;
+  border-top: 1px solid #888;
+  border-left: 1px solid #888;
+  background-color: #e0e0e0;
+  white-space: nowrap;
+  text-align: left;
+  padding: 4px;
+  z-index: 1;
+}
+
+.DelegateBox {
+  position: absolute;
+  top: -0.5in;
+  left: -1.0in;
+  display: block;
+  border: 2px outset #888;
+  border-top: 1px solid #888;
+  border-left: 1px solid #888;
+  background-color: #e0e0e0;
+  white-space: nowrap;
+  text-align: left;
+  padding: 4px;
+  z-index: 1;
+}
+
+.RoleInfoTitle {
+  padding: 2px;
+  background-color: #dfd;
+  font-weight: bold;
+}
+
+.RoleInfoArea {
+  padding: 4px;
+  max-width: 800px;
+}
+
+.AppDeclarationDetail {
+  padding: 4px 4px 4px 3%;
+  background-color: #D9E4F3;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  height: 1.5in;
+}
+
+.RoundedBox {
+  width: 100%;
+  padding-top: 3px;
+  padding-bottom: 0px;
+  border: 1px solid #648FC3;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+#initializationError {
+  border: 10px solid darkred;
+  padding: 20px;
+}
+
+/*################################### Run Task Report area ###################################*/
+
+.RunTaskLine {
+  text-indent:10px;
+  margin-top:0px;
+  margin-bottom:0px;
+}
+
+.RunTaskLineItem {
+  text-indent:20px;
+  margin-top:0px;
+  margin-bottom:0px;
+}
+
+/*######################### Work Item Comment ####################################*/
+
+div.WorkItemComment {
+    width: 98%;
+    text-align: left;
+    border: 1px solid #ccc;
+    background: #eee;
+    padding: 10px;
+}
+
+div.WorkItemComment div.Title {
+    font: 14px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #1370ab;
+}
+
+div.WorkItemComment div.Value {
+    font: 13px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+}
+
+/*######################### Expand/Collapse control ####################################*/
+
+#infoAreaContent {
+  filter: "Alpha(opacity=96)";
+  opacity: 0.96;
+}
+
+.expand-collapse {
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.expand-collapse-controls {
+    height: 100%;
+    width: 21px;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.collapse-controls {
+    width: 100%;
+    height: 100%;
+    empty-cells: show;
+}
+
+.collapse-top-row {
+    height: 3px;
+}
+
+.collapse-top-cell {
+    background-image: url(../../../images/infoArea/InfoArea-expanded-top.gif);
+}
+
+.collapse-middle-cell {
+    background-image: url(../../../images/infoArea/InfoArea-expanded-middle.gif);
+}
+
+.collapse-bottom-cell {
+    background-image: url(../../../images/infoArea/InfoArea-expanded-bottom.gif);
+}
+
+.collapse-bottom-row {
+    height: 21px;
+}
+
+.expand-controls {
+    background-image: url(../../../images/infoArea/InfoArea-collapsed.gif);
+    height: 17px;
+    width: 22px;
+}
+
+.expand-collapse-header {
+    cursor: pointer;
+    padding-left: 5px;
+    color: steelblue;
+    font-weight: bold;
+    border-top: 1px solid transparent;  /* prevents 1px shift in FF */
+    border-bottom: 1px solid #ddd;
+}
+
+.expand-collapse-content {
+    padding: 0px;
+}
+
+.expand-collapse-body {
+    border-right: 1px solid #8db2e3;
+}
+
+.expand-collapse-body-content {
+    padding-left: 5px;
+}
+
+.expand-collapse-content-bottom-border {
+    height: 2px;
+    background-image: url(../../../images/infoArea/InfoArea-expanded-border.gif);
+    overflow: hidden;
+}
+
+/* EXPANDED */
+.expanded .expand-controls {
+    display: none;
+}
+
+.expanded .expand-collapse-header {
+    /* Due to a 1px difference in the size of the expand and collapse controls, we increase the padding by 1 so that the header content doesn't jump */
+    padding-left: 6px;
+}
+
+/* COLLAPSED */
+.collapsed .collapse-controls {
+    display: none;
+}
+
+.collapsed .expand-collapse-body {
+    display: none;
+}
+
+/*  Sliding Toggle Checkbox */
+
+.sliding-toggle-checkbox {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #666666;
+    height: 1.5em;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    font-style: normal;
+}
+
+.sliding-toggle-checkbox label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    height: 100%;
+}
+
+.sliding-toggle-checkbox.checked label {
+    left: 0;
+}
+
+.toggle-text {
+    display: inline-block;
+    line-height: 1.5em;
+    white-space: nowrap;
+    font-weight: bold;
+    position: absolute;
+    top: 0px;
+}
+
+.toggle-text-on {
+    left: 0;
+    text-align: left;
+    padding-right: 30px;
+    padding-left: 10px;
+    background-color: #007fea;
+    color: white;
+    top: -100px;
+}
+
+.toggle-text-off {
+    right: 0;
+    text-align: right;
+    padding-left: 30px;
+    padding-right: 10px;
+    background-color: white;
+    color: #666666;
+}
+
+.checked .toggle-text-on {
+    top: 0px;
+}
+
+.checked .toggle-text-off {
+    top: -100px;
+}
+
+.sliding-toggle-checkbox input {
+    position: absolute;
+    top: -30;
+    left: -30;
+}
+
+.sliding-toggle-button {
+    font-size: 8px;
+    position: absolute;
+    display: inline-block;
+    height: 100%;
+    background-color: #cccccc;
+    width: 16px;
+    left: 0;
+    right: auto;
+    top: -1;
+    border: 1px solid #666666;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    text-align: center;
+    color: #aaaaaa;
+    cursor: pointer;
+    vertical-align: middle;
+    background-image: url(../../../images/buttons/sliding-toggle-button.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.checked .sliding-toggle-button {
+    left: auto;
+    right: 0;
+}
+
+.toggleHover .sliding-toggle-button {
+    background-color: #eeeeee;
+}
+
+/*######################### Custom Radio button ####################################*/
+
+.Radio {
+  color: steelblue;
+}
+
+.Radio td {
+  font: bold 13px Arial;
+  white-space: nowrap;
+  border: 1px solid #bbb;
+  border-right: none;
+  background-color: #F6F6F6;
+  padding: 2 12 2 12;
+  cursor: pointer;
+}
+
+.Radio .first {
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.Radio .last {
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-right: 1px solid #bbb;
+}
+
+.Radio .selected {
+  color: black;
+  border: 1px solid #666;
+  background-color: #FDE37B; 
+}
+
+.Radio .disabled {
+  color: #999;
+  border-color: #777;
+  filter: "Alpha(opacity=50)";
+  opacity: 0.5;
+  cursor: default;
+}
+
+.Radio .hover {
+  background-color: #FEF5D6;
+}
+
+/*################################### Split Color Buttons ###################################*/
+
+span.SplitColorButton_default,
+span.SplitColorButton_green,
+span.SplitColorButton_red,
+span.SplitColorButton_orange,
+span.SplitColorButton_yellow {
+  cursor: pointer;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+span.SplitColorButton_default span.Left,
+span.SplitColorButton_green span.Left,
+span.SplitColorButton_red span.Left,
+span.SplitColorButton_orange span.Left,
+span.SplitColorButton_yellow span.Left {
+  background: url('../../../images/buttons/color-left-default.gif') no-repeat top left;
+  font: 12px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  vertical-align: middle;
+  padding: 0 5px 0 6px;
+  height: 22px;
+  line-height: 17px;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+span.SplitColorButton_default span.Right,
+span.SplitColorButton_green span.Right,
+span.SplitColorButton_red span.Right,
+span.SplitColorButton_orange span.Right,
+span.SplitColorButton_yellow span.Right {
+  background: url('../../../images/buttons/split-color-right-default.gif') no-repeat top right;
+  vertical-align: middle;
+  height: 22px;
+  width: 21px;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+span.SplitColorButton_green span.Left {
+  background: url('../../../images/buttons/color-left-green.gif') no-repeat top left;
+}
+span.SplitColorButton_green span.Right {
+  background: url('../../../images/buttons/split-color-right-green.gif') no-repeat top right;
+}
+
+span.SplitColorButton_red span.Left {
+  background: url('../../../images/buttons/color-left-red.gif') no-repeat top left;
+}
+span.SplitColorButton_red span.Right {
+  background: url('../../../images/buttons/split-color-right-red.gif') no-repeat top right;
+}
+
+span.SplitColorButton_orange span.Left {
+    background: url('../../../images/buttons/color-left-orange.gif') no-repeat top left;
+}
+span.SplitColorButton_orange span.Right {
+    background: url('../../../images/buttons/split-color-right-orange.gif') no-repeat top right;
+}
+
+span.SplitColorButton_yellow span.Left {
+  background: url('../../../images/buttons/color-left-yellow.gif') no-repeat top left;
+}
+span.SplitColorButton_yellow span.Right {
+  background: url('../../../images/buttons/split-color-right-yellow.gif') no-repeat top right;
+}
+
+span.SplitColorButton_disabled {
+  cursor: default;
+  opacity: 0.5;
+  filter: Alpha(opacity=50);
+  zoom: 1;
+}
+
+.webServiceUsage {
+    background-color: #F8F8F8;
+}
+
+
+/*################################### Simplified Dashboards ###################################*/
+
+.dashdivider {
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px;
+  padding-top: 10px;
+  border-bottom: 1px solid #C0DAFF;
+  height: 20px;
+}
+
+/*################ version 1 ################*/
+.dashbadge {
+  height: 25px;
+  width: 36px;
+  padding: 3px 3px 2px 2px;
+  position: absolute;
+  top: 5px;
+  left: 62px;
+  cursor: pointer;
+}
+.dashbadge .count {
+  height: 25px;
+  width: 36px;
+  color: white;
+  font: bold 14px Helvetica, Verdana, Tahoma;
+  text-align: center;
+  position: absolute;
+  top: 6px;
+  left: 1px;
+}
+.dashbox {
+  position: relative;
+  display: inline-block;
+  *display: inline; /* IE */
+  padding-top: 10px;
+  padding-bottom: 20px;
+  width: 320px;
+  padding-left: 30px;
+  vertical-align: top;
+}
+.dashbox A {
+  text-decoration: none;
+}
+.dashbox A:hover {
+}
+.dashbox img {
+  border: none;
+}
+.dashimage {
+  vertical-align: top
+}
+.dashtext {
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 7px;
+  vertical-align: top;
+  text-decoration: underline;
+}
+.dashdesc {
+  display: block;
+  font-size: 14px;
+  padding: 4 0 0 15;
+  color: gray;
+}
+
+/*################ version 2 ################*/
+.dashbadge2 {
+  height: 25px;
+  width: 36px;
+  padding: 3px 3px 2px 2px;
+  position: absolute;
+  top: 5px;
+  left: 32px;
+  cursor: pointer;
+}
+.dashbadge2 .count {
+  height: 25px;
+  width: 36px;
+  color: white;
+  font: bold 14px Helvetica, Verdana, Tahoma;
+  text-align: center;
+  position: absolute;
+  top: 6px;
+  left: 1px;
+}
+.dashbox2 {
+  position: relative;
+  display: inline-block;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.dashbox2 A {
+  border: none;
+  text-decoration: none;
+}
+.dashbox2 A:hover {
+  border: none;
+}
+.dashbox2 img {
+  border: none;
+}
+.dashimage2 {
+}
+.dashtext2 {
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 7px;
+  vertical-align: top;
+  text-decoration: underline;
+}
+.dashdesc2 {
+  display: block;
+  font-size: 14px;
+  padding: 5 0 0 15;
+  color: gray;
+}
+
+/*################ version 3 ################*/
+.dashbadge3 {
+  height: 25px;
+  width: 36px;
+  padding: 3px 3px 2px 2px;
+  position: absolute;
+  top: 20px;
+  left: 105px;
+}
+.dashbadge3 .count {
+  height: 25px;
+  width: 36px;
+  color: white;
+  font: bold 14px Helvetica, Verdana, Tahoma;
+  text-align: center;
+  position: absolute;
+  top: 6px;
+  left: 1px;
+}
+.dashbox3 {
+  position: relative;
+  display: inline-block;
+  *display: inline; /* IE */
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  width: 200px;
+}
+.dashbox3 A {
+  border-bottom: none;
+}
+.dashbox3 A:hover {
+  border-bottom: none;
+}
+.dashbox3 img {
+  border: none;
+}
+.dashimage3 {
+  display: block;
+}
+.dashtext3 {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px;
+}
+
+
+A { 
+  text-decoration: none;
+  border-bottom: 1px solid lightgrey;
+}
+
+A:hover {
+  text-decoration: none;
+  border-bottom: 1px solid #1370ab;
+}
+
+A.InfoLink {
+  border-bottom: none;
+  text-decoration: none;
+}
+
+A:hover.InfoLink {
+  border-bottom: none;
+  text-decoration: none;
+}
+
+h1 {
+  background: none;
+  background-color: transparent;
+  padding: 2px 2px 3px 10px;
+  font: bold 22px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  color: #085590;
+}
+
+h2 {
+  background: none;
+  background-color: transparent;
+  padding: 2px 2px 3px 10px;
+  font: bold 18px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  color: #053356;
+}
+
+.MainBody {
+  background: white;
+  padding: 41 0 36 0;
+}
+
+h4, .h4 {
+    color: #197CB3;
+    margin-top: 1ex;
+    border-bottom: none;
+}
+
+.Header {
+  width: 100%;
+  height: 55px;
+}
+
+.Header a {
+  border-bottom: none;
+}
+
+.Toolbar { /* top app button container */
+  font-size: 13px;
+  font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  position: absolute; 
+  top: 100px; 
+  right: 50px;
+}
+
+.ToolbarText {
+  color: black;
+  text-decoration: none;
+}
+
+.MainUnderbar .Breadcrumb {
+  padding: 5 0 3 0;
+}
+
+.MainUnderbar .Breadcrumb a {
+  border-bottom: none;
+}
+
+.MainDialog .DialogFooter {
+  background-color: #FFFFFF;
+}
+
+.MainTitle {
+  border-bottom: none;
+}
+
+.MainTitle .Left {
+  background: none;
+  background-color: transparent;
+  width: 6px;
+}
+
+.MainTitle .Middle {
+  background: none;
+  background-color: transparent;
+  font: bold 22px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.MainTitle .Right {
+  background: none;
+  background-color: transparent;
+  width: 6px;
+}
+
+.MainTitle .AutoRefresh {
+  background-color: transparent;
+  font: 12px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  background: none;
+  color: #085590;
+}
+
+/*################################### Main Page Dialog ###################################*/
+
+.MainDialog .MainTitle {
+  width:100%;
+  height: 23px;
+  cursor: default;
+  text-align: left;
+  border-bottom: 1px solid #1BA7BD;
+}
+
+.MainDialog .MainTitle .Left {
+  background: #918D7B url(../images/titlebar-left.png) top no-repeat;  
+  width: 6px;
+}
+
+.MainDialog .MainTitle .Middle {
+  background: #AFC875 url(../images/titlebar-middle.png) top repeat-x;
+  padding: 2px 2px 3px 10px;
+  font: bold 20px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.MainDialog .MainTitle .Right {
+  background: #918D7B url(../images/titlebar-right.png) top no-repeat;
+  width: 6px;
+}
+
+.MainDialog .MainTitle .AutoRefresh {
+  background: #AFC875 url(../images/titlebar-middle.png) top repeat-x;
+  font: 12px Arial, sans-serif;
+  color: white;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 2px 2px 3px 10px;
+}
+
+/*################################### Main Menu ###################################*/
+
+.MainMenuDiv {
+  background: transparent url(../images/tabs/main/unsel-middle.gif) top repeat-x;
+  top: 0;
+  height: 40px;
+  left: 0;
+  position: fixed;
+  _position: absolute;
+  width: 100%;
+  z-index: 150;
+}
+
+.MainMenuDiv .Scroll {
+  display: inline-block;
+  height: 40px;
+  position: fixed;
+  _position: absolute;
+  width: 30px;
+  margin-right: 95px;
+  background-color: rgba(255, 255, 255, 0.4);
+  _background-color: #ffffff;
+  filter: alpha(opacity=40);
+  vertical-align: middle;
+  text-align: center;
+  z-index: 151;
+}
+
+.MainMenuDiv .Scroll:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  filter: alpha(opacity=60);
+}
+
+.MainMenuDiv .Left .Scroll {
+  top: 0;
+  left: 0;
+}
+
+.MainMenuDiv .Right .Scroll {
+  top: 0;
+  right: 0;
+}
+
+.MainMenuDiv .Scroll .Arrow {
+  display: inline-block;
+  font-family: "rsa-icons";
+  font-size: 18px;
+  color: #000000;
+  line-height: 14px;
+  padding-top: 12px;
+  opacity: 1;
+  z-index: 152;
+}
+
+.MainMenu td.MenuCell {
+  width: auto;
+}
+
+.MainMenu .DisabledTab {
+  cursor: default;
+}
+
+.MainMenu .Tab .TabMiddle {
+  font: normal 14px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  height: 40px;
+}
+
+.MainMenu .SelTab .TabMiddle {
+  border: none;
+  font: normal 14px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  height: 40px;
+}
+
+.MainMenu .HoverTab .TabMiddle {
+  font: normal 14px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  height: 40px;
+}
+
+.MainMenu .DisabledTab .TabMiddle {
+  font: normal 14px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  height: 40px;
+}
+
+.MainMenu .LoadingTab {
+  color: #053356;
+}
+
+.MainMenu .LoadingTab .TabMiddle {
+  height: 40px;
+  font: normal 14px "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+.MainMenu .TabMiddle .Arrow {
+  display: inline-block;
+  font-family: "rsa-icons";
+  font-size: 18px;
+  color: #6d93af;
+  line-height: 14px;
+  vertical-align: top;
+  margin: 2px 0 0 1px;
+}
+
+.MainMenu .HoverTab .TabMiddle .Arrow,
+.MainMenu .SelTab .TabMiddle .Arrow {
+  color: #ffffff;
+}
+
+.MainMenu .Icon {
+  display: inline-block;
+  font-family: "rsa-icons";
+  font-size: 14px;
+  color: #ffffff;
+  line-height: 14px;
+  vertical-align: top;
+  margin: 0 10px 0 0;
+}
+
+.MainMenuCell {
+  /*border-bottom: 1px solid #1ba7bd;
+  _border-bottom: 0px;*/
+}
+
+.MainMenu {
+  height: 40px;
+  width: auto;
+}
+
+.MainMenu .Left {
+  background: transparent url(../images/tabs/main/unsel-middle.gif) top repeat-x;
+  height: 40px;
+  filter: none;
+  opacity: 1;
+}
+
+.MainMenu .Right {
+  background: transparent url(../images/tabs/main/unsel-middle.gif) top repeat-x;
+  height: 40px;
+  filter: none;
+  opacity: 1;
+}
+
+
+.DropMenu {
+  display: none;
+  text-align: left;
+  position: absolute;
+  top: 40px;
+  _top: 40px;  /*for IE*/
+  left: 0;
+  min-width: 110px;
+  overflow: visible;
+  white-space: nowrap;
+  z-index: 150;
+  /* round corners for shadow */
+  -moz-border-radius-bottomleft: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  /* drop shadow */
+  -moz-box-shadow: none;
+ -webkit-box-shadow: none;
+  box-shadow: none;
+  /* border */
+  border: 0px none;
+  _border-left: 0px none;  /*for IE*/
+  _border-right: 0px none;  /*for IE*/
+  _border-bottom: 0px none;  /*for IE*/
+}
+
+.DropMenu .Last {
+  /* round corners for shadow */
+  -moz-border-radius-bottomleft: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+/*################################### Drop-down Menu ###################################*/
+
+.DropMenu div a {
+  border: 0px none;
+}
+
+.DropMenu div A {
+  color: #FFFFFF;
+    background-color: #085590;
+}
+
+.DropMenu div a:hover {
+  color: #FFFFFF;
+  background-color: #1ba7db; 
+  border: 0px none;
+}
+
+.DropMenu .Special {
+  background-color: #197CB3;
+  _background-color: #197CB3;
+}
+
+
+/*################################### Top Menu ###################################*/
+
+
+.TopMenu .Tab {
+  border-bottom: 1px solid lightgrey;
+}
+
+.TopMenu .Tab .TabMiddle {
+  background: url(../images/tabs/unsel-middle.gif) top repeat-x;
+  border-top: 1px solid lightgrey;
+  font: normal 12px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.TopMenu .Tab .TabRight {
+  padding-right: 2px;
+}
+
+.TopMenu .SelTab {
+  border-bottom: none;
+}
+
+.TopMenu .SelTab .TabMiddle {
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #E6E6E6;
+  background: url(../images/tabs/sel-middle.gif) top repeat-x;
+  padding: 6 5 6 5;
+  font: bold 12px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.TopMenu .SelTab .TabLeft {
+  background: url(../images/tabs/sel-left.gif) top right no-repeat;
+  vertical-align: top;
+  padding: 0px;
+  width: 7px;
+  padding-left: 0px;
+}
+
+.TopMenu .SelTab .TabRight {
+  background: url(../images/tabs/sel-right.gif) no-repeat;
+  vertical-align: top;
+  padding: 0px;
+  width: 7px;
+  padding-right: 0px;
+}
+
+.TopMenu .HoverTab .TabMiddle {
+   font: normal 12px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.TopMenu .HoverTab .TabRight {
+  padding-right: 2px;
+}
+
+.TopMenu .LoadingTab {
+  border-bottom: 1px solid lightgrey;
+}
+
+.TopMenu .LoadingTab .TabMiddle {
+  font: normal 12px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+}
+
+
+.TopMenu .LoadingTab .TabRight {
+  padding-right: 2px;
+}
+
+.TopMenu .Right {
+  border-bottom: 1px solid lightgrey;
+}
+
+.TopMenu .Left {
+  width: 1px;
+  border-bottom: 1px solid lightgrey;
+}
+
+
+.Dialog .Title {
+  font-size: 14px;
+  height: 24px;
+  background: #095792 url(../images/dialog-header.gif) top repeat-x;
+  border-bottom: 1px solid #197CB3;
+}
+
+.Dialog .Title .Text {
+  color: white;
+}
+
+
+
+/*################################### Dialog Menu ###################################*/
+
+.DialogMenu {
+  color: black;
+  background: white;
+  font-size: 14px;
+}
+
+.DialogMenu .Tab {
+  border-bottom: 1px solid lightgrey;
+}
+
+.DialogMenu .Tab .TabMiddle {
+  border-top: 1px solid lightgrey;
+  background: url(../images/tabs/unsel-middle.gif) top repeat-x;
+  font: normal 13px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.DialogMenu .Tab .TabLeft {
+  padding-left: 1px;
+}
+
+.DialogMenu .DisabledTab {
+  cursor: default;
+  border-bottom: 1px solid lightgrey;
+}
+
+.DialogMenu .DisabledTab .TabMiddle {
+    border-top: 1px solid lightgrey;
+    background: url(../images/tabs/unsel-middle.gif) top repeat-x;
+    font: normal 13px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+}
+.DialogMenu .DisabledTab .TabLeft {
+    background: url(../images/tabs/unsel-left.gif) top right no-repeat;
+    padding-left: 1px;
+}
+
+.DialogMenu .DisabledTab .TabRight {
+    background: url(../images/tabs/unsel-right.gif) top left no-repeat;
+    padding-right: 2px;
+}
+
+.DialogMenu .SelTab .TabMiddle {
+  border-top: 1px solid lightgrey;
+  background: url(../images/tabs/sel-middle.gif) top repeat-x;
+  padding: 6 5 6 5;
+  font: bold 13px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif
+}
+
+.DialogMenu .SelTab .TabLeft {
+  background: url(../images/tabs/sel-left.gif) top right no-repeat;
+  padding-left: 0px;
+}
+
+.DialogMenu .SelTab .TabRight {
+  background: url(../images/tabs/sel-right.gif) top left no-repeat;
+  padding-right: 0px;
+}
+
+.DialogMenu .SelTab .Brown {
+  color: #464646;
+}
+.DialogMenu .SelTab .Blue {
+  color: #197CB3;
+}
+
+.DialogMenu .HoverTab {
+  border-bottom: 1px solid lightgrey;
+}
+
+.DialogMenu .HoverTab .TabMiddle {
+  font: normal 13px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.DialogMenu .HoverTab .TabLeft {
+  background: url(../images/tabs/hover-left.gif) top right no-repeat;
+  padding-left: 1px;
+}
+
+.DialogMenu .HoverTab .TabRight {
+  background: url(../images/tabs/hover-right.gif) top left no-repeat;
+  padding-right: 2px;
+}
+
+.DialogMenu .LoadingTab {
+  border-bottom: 1px solid lightgrey;
+}
+
+.DialogMenu .LoadingTab .TabMiddle {
+  text-align: center;
+  border-top: 1px dashed green;
+  font: normal 13px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.DialogMenu .LoadingTab .TabLeft {
+  background: url(../images/tabs/hover-left.gif) top right no-repeat;
+  padding-left: 1px;
+}
+
+.DialogMenu .LoadingTab .TabRight {
+  background: url(../images/tabs/hover-right.gif) top left no-repeat;
+  padding-right: 2px;
+}
+
+.DialogMenu .Right {
+  border-bottom: 1px solid lightgrey;
+}
+
+.DialogMenu .Left {
+  border-bottom: 1px solid lightgrey;
+}
+
+.DialogMenuBox {
+  border-bottom: none !important;
+  border-top: 3px solid white;
+  background: white;
+}
+
+
+
+.InfoAreaBox {
+  background: white;
+}
+
+
+h3 { /* should match .MainDivider */
+  font: bold 17px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  color: #085590;
+}
+
+.MainDivider { /* horizontal dividing line for content */
+  font: bold 17px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  color: #085590;
+  border-bottom: none;
+}
+
+.MainDivider_Review { /* horizontal dividing line for reviews content */
+  border-bottom: none;
+}
+
+.AttrName { /* attribute display name */
+  font: normal 12px "Open Sans", "Segoe UI", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  color: #1BA7DB;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-bottom: none;
+}
+
+.AttrName_Even {
+  color: #085590;
+}
+
+.AttrName_Odd {
+  color: #085590;
+}
+
+.AttrValue { /* attribute display value */
+  vertical-align: top;
+  font-size: 13px;
+  padding-bottom:4px;
+  padding-top: 4px;
+  border-bottom: none;
+}
+
+.SectionLink {
+  border-bottom: none;
+}
+.SectionLink:hover {
+  border-bottom: none;
+}
+
+.DropDownMenu a {
+  border-bottom: none;
+}
+
+.DropDownMenu a:hover {
+  border-bottom: none;
+}
+
+.Brown {
+  color: #464646;
+}
+
+.Blue {
+  color: #197CB3;
+}
+
+.Radio .selected {
+  color: black;
+  border: 1px solid #363636;
+  background-color: #FDE37B; 
+}
+
+.Radio .disabled {
+  color: #464646;
+  border-color: #363636;
+  filter: "Alpha(opacity=50)";
+  opacity: 0.5;
+}
+
+.Radio .hover {
+  color: black;
+  filter: "Alpha(opacity=50)";
+  opacity: 0.5;
+  background-color: #FEF5D6;
+}
+
+/*################################### Main Page Footer ###################################*/
+
+.MainFooter {
+  background-color: #363636;
+  border-top: 1px solid #757575;
+  bottom: 0;
+  height: 36px;
+  left: 0;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+
+.MainFooter a {
+  border-bottom: none;
+}
+
+.MainFooter .Logo {
+  display: inline-block;
+  height: 18px;
+  width: 41px;
+  margin: 8px 6px 0px 15px;
+}
+
+.MainFooter .CustomFooter .Logo {
+  height: 20px;
+  width: auto;
+  margin: 6px 10px 0px 15px;
+}
+
+.MainFooter .Divider {
+  height: 18px;
+  line-height: 36px;
+  _line-height: 18px; /*fix for IE*/
+  vertical-align: top;
+  width: 1px;
+  border-left: 1px solid #757575;
+  _margin: 8px 0; /*fix for IE*/
+}
+
+.MainFooter .ProductName {
+  display: inline-block;
+  line-height: 14px;
+  vertical-align: top;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 11px 10px 0 0;
+  _padding: 8px 10px 13px 0; /*fix for IE*/
+  color: #ffffff;
+}
+
+.MainFooter .CustomFooter .ProductName {
+  font-size: 10px;
+  padding: 11px 30px 0 10px;
+  _padding: 8px 30px 13px 10px; /*fix for IE*/
+}
+
+.MainFooter .Version {
+  _display: inline-block; /*fix for IE*/
+  margin: 8px 0;
+  _margin: 11px 0 0 0; /*fix for IE*/
+  line-height: 36px;
+  _line-height: 12px; /*fix for IE*/
+  vertical-align: top;
+  padding: 0 10px 0 10px;
+  font-size: 10px;
+  color: #ffffff;
+}
+
+.MainFooter .Copyright {
+  float: right;
+  padding: 9px 15px 0 30px;
+  text-align: right;
+  font-size: 10px;
+  color: #757575;
+}
+
+.MainFooter .UserFooter {
+  _display: inline-block; /*fix for IE*/
+  margin: 8px 0;
+  _margin: 11px 0 0 0; /*fix for IE*/
+  line-height: 36px;
+  _line-height: 12px; /*fix for IE*/
+  vertical-align: top;
+  padding: 0 10px 0 10px;
+  font-size: 10px;
+  color: #ffffff;
+}
+.MainFooter .UserFooter a {
+  color: #ffffff;
+  vertical-align: top;
+}
+
+/*################################### User and Toolbar in Main Menu ###################################*/
+
+.MainMenu .MenuToolbar {
+  background: transparent url(../images/tabs/main/unsel-middle.gif) top repeat-x;
+  border-bottom: 1px solid #1ba7bd;
+  _border-bottom: 0px; /* fix for IE */
+  height: 40px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  _position: absolute;
+  _width: 95px;
+  z-index: 160;
+}
+
+.UserMenu {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  _position: absolute;
+  _right: 40px;
+  _top: 0px;
+}
+
+.UserMenu .MainMenu {
+  display: inline-block;
+}
+
+.UserMenu .Tab .TabMiddle,
+.UserMenu .HoverTab .TabMiddle,
+.UserMenu .SelTab .TabMiddle {
+  font: normal 10px "Open Sans", Arial, Helvetica, sans-serif
+}
+
+.MainMenu .HelpIcon {
+  color: #6D93AF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "rsa-icons";
+  font-size: 14px;
+  line-height: 14px;
+  padding: 13px 15px 12px 10px;
+  position: relative;
+  _position: absolute;
+  _right: 5px;
+  _top: 0px;
+  vertical-align: top;
+  border: none;
+}
+
+.MainMenu .HelpIcon:hover {
+  color: #FFFFFF;
+}
+
+.MainMenu .Divider {
+  background-color: #6D93AF;
+  display: inline-block;
+  height: 24px;
+  margin-top: 8px;
+  padding: 0;
+  width: 1px;
+}
+
+
+	</style>
+	
+</head>
+<body>
+<TABLE style='width:100%; height:100%;' cellpadding=0 cellspacing=0>
+
+<!-- Main Menu Begin -->
+<TR><TD><DIV class='MainMenuDiv'>
+<TABLE style='width:100%' cellpadding=0 cellspacing=0>
+<TR><TD class="MainMenuCell" style='vertical-align:top'>
+<TABLE id='MainMenu' class='MainMenu' cellspacing=0 cellpadding=0>
+<TR style='float:left;'>
+<TD><img src="Logo.png" style="width:120px;height:40px;"/></TD>
+<TD  style='vertical-align:top; width:95px;'> <div class="DropMenuParent" onMouseOver="dropMenuShow(this, true);" onMouseOut="dropMenuShow(this, false);"> 
+<TABLE id="HomeTab" class="SelTab" style="height:32px;cursor:pointer;" onClick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=HomeTab_DashboardTab_Line+Manager+Home_DashboardDisplayPageData&BreadcrumbLevel=0';" cellspacing=0 cellpadding=0>
+<TR> <TD class='TabLeft'><!--<img src='./images/blank.gif' style='width:1px;' />--></TD>
+<TD class='TabMiddle'>Home&nbsp;</TD>
+<!--<TD class='TabRight'><img src='./images/blank.gif' style='width:1px;' /></TD>-->
+</TR><!-- <TR style='background:transparent url(./images/shadow/shadow-bottom.png) 0px -4px repeat-x; height:2px'><TD colspan=3></TD>
+
+</TR>--> </TABLE> </div>
+</TD> 
+</TR> <TR style="float:left;"> 
+<TD style='vertical-align:top; width:95px;'> <div class="DropMenuParent" onMouseOver="dropMenuShow(this, true);" onMouseOut="dropMenuShow(this, false);"> <TABLE id="MyTasksTab" class="Tab" style="height:24px;" onMouseOver="this.className='HoverTab'" onMouseOut="if(this.className=='HoverTab') this.className='Tab'" onClick="return false;" cellspacing=0 cellpadding=0><TR> <TD class='TabLeft'><!--<img src='./images/blank.gif' style='width:1px;' />--></TD>
+<TD class='TabMiddle'>My&nbsp;Tasks&nbsp;</TD>
+<TD class='TabRight'><!--<img src='./images/blank.gif' style='width:1px;' />--></TD>
+</TR></TABLE><div id='DropMenu1' class='DropMenu' style=''>
+<div><a id='ReviewsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=ReviewSummaryPageData&BreadcrumbLevel=0'; return false;">Reviews</a></div>
+<div><a id='RequestsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=ChangeRequestMySummaryPageData&BreadcrumbLevel=0'; return false;">Requests</a></div>
+<div><a id='ApprovalsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=ChangeRequestMyApprovalsSummaryPageData&BreadcrumbLevel=0'; return false;">Approvals</a></div>
+<div><a id='ActivitiesTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=ChangeActivityMySummaryPageData&BreadcrumbLevel=0'; return false;">Activities</a></div>
+<div><a id='ExceptionsTab' class=' Last' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=MyExceptionsSummaryPage&BreadcrumbLevel=0'; return false;">Violations</a></div>
+</div>
+</div>
+</TD> <TD style='vertical-align:top; width:95px;'> <div class="DropMenuParent" onMouseOver="dropMenuShow(this, true);" onMouseOut="dropMenuShow(this, false);"> <TABLE id="UsersTab" class="Tab" style="height:24px;" onMouseOver="this.className='HoverTab'" onMouseOut="if(this.className=='HoverTab') this.className='Tab'" onClick="return false;" cellspacing=0 cellpadding=0><TR> <TD class='TabLeft'><!--<img src='./images/blank.gif' style='width:1px;' />--></TD>
+<TD class='TabMiddle'>Users&nbsp;</TD>
+<TD class='TabRight'><!--<img src='./images/blank.gif' style='width:1px;' />--></TD>
+</TR></TABLE><div id='DropMenu2' class='DropMenu' style=''>
+<div><a id='DashboardTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=UsersTab_DashboardTab_Overview_DashboardDisplayPageData&BreadcrumbLevel=0'; return false;">Overview</a></div>
+<div><a id='UsersTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=UserSummaryPage&BreadcrumbLevel=0'; return false;">Users</a></div>
+<div><a id='GroupsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=UserGroupSummaryPageData&BreadcrumbLevel=0'; return false;">Groups</a></div>
+<div><a id='BusinessUnitsTab' class=' Last' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=BusinessUnitSummaryPage&BreadcrumbLevel=0'; return false;">Business&nbsp;Units</a></div>
+</div>
+</div>
+</TD> <TD style='vertical-align:top; width:95px;'> <div class="DropMenuParent" onMouseOver="dropMenuShow(this, true);" onMouseOut="dropMenuShow(this, false);"> <TABLE id="ResourcesTab" class="Tab" style="height:24px;" onMouseOver="this.className='HoverTab'" onMouseOut="if(this.className=='HoverTab') this.className='Tab'" onClick="return false;" cellspacing=0 cellpadding=0><TR> <TD class='TabLeft'><!--<img src='./images/blank.gif' style='width:1px;' />--></TD>
+<TD class='TabMiddle'>Resources&nbsp;</TD>
+<TD class='TabRight'><!--<img src='./images/blank.gif' style='width:1px;' />--></TD>
+</TR></TABLE><div id='DropMenu3' class='DropMenu' style=''>
+<div><a id='DirectoriesTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=DirectorySummaryPage&BreadcrumbLevel=0'; return false;">Directories</a></div>
+<div><a id='ApplicationsTab' class=' Last' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=ApplicationSummaryPage&BreadcrumbLevel=0'; return false;">Applications</a></div>
+</div>
+</div>
+</TD> <TD style='vertical-align:top; width:95px;'> <div class="DropMenuParent" onMouseOver="dropMenuShow(this, true);" onMouseOut="dropMenuShow(this, false);"> <TABLE id="RolesTab" class="Tab" style="height:24px;" onMouseOver="this.className='HoverTab'" onMouseOut="if(this.className=='HoverTab') this.className='Tab'" onClick="return false;" cellspacing=0 cellpadding=0><TR> <TD class='TabLeft'><!--<img src='./images/blank.gif' style='width:1px;' />--></TD>
+<TD class='TabMiddle'>Roles&nbsp;</TD>
+<TD class='TabRight'><!--<img src='./images/blank.gif' style='width:1px;' />--></TD>
+</TR></TABLE><div id='DropMenu4' class='DropMenu' style=''>
+<div><a id='RolesTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=RoleSummaryPageData&BreadcrumbLevel=0'; return false;">Roles</a></div>
+<div><a id='GlobalRoleSetsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=GlobalRoleSetSummaryPageData&BreadcrumbLevel=0'; return false;">Role&nbsp;Sets</a></div>
+<div><a id='RoleConfigTab' class=' Special Last' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=RoleTypesConfigData&BreadcrumbLevel=0'; return false;">Configuration</a></div>
+</div>
+</div>
+</TD> <TD style='vertical-align:top; width:95px;'> <div class="DropMenuParent" onMouseOver="dropMenuShow(this, true);" onMouseOut="dropMenuShow(this, false);"> <TABLE id="AccessRequestsTab" class="Tab" style="height:24px;" onMouseOver="this.className='HoverTab'" onMouseOut="if(this.className=='HoverTab') this.className='Tab'" onClick="return false;" cellspacing=0 cellpadding=0><TR> <TD class='TabLeft'><!--<img src='./images/blank.gif' style='width:1px;' />--></TD>
+<TD class='TabMiddle'>Requests&nbsp;</TD>
+<TD class='TabRight'><!--<img src='./images/blank.gif' style='width:1px;' />--></TD>
+</TR></TABLE><div id='DropMenu5' class='DropMenu' style=''>
+<div><a id='RequestsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=ChangeRequestSummaryPageData&BreadcrumbLevel=0'; return false;">Requests</a></div>
+<div><a id='ApprovalsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=ChangeRequestApprovalSummaryPageData&BreadcrumbLevel=0'; return false;">Approvals</a></div>
+<div><a id='ActivitiesTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=ChangeActivitySummaryPageData&BreadcrumbLevel=0'; return false;">Activities</a></div>
+<div><a id='ChangeRequestWorkflowsTab' class=' Special' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=ChangeRequestConfigDefaultWorkflowsPageData&BreadcrumbLevel=0'; return false;">Workflows</a></div>
+<div><a id='AccessRequestConfigTab' class=' Special Last' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=AccessRequestConfigMainPageData&BreadcrumbLevel=0'; return false;">Configuration</a></div>
+</div>
+</div>
+</TD> <TD style='vertical-align:top; width:95px;'> <div class="DropMenuParent" onMouseOver="dropMenuShow(this, true);" onMouseOut="dropMenuShow(this, false);"> <TABLE id="CertificationTab" class="Tab" style="height:24px;" onMouseOver="this.className='HoverTab'" onMouseOut="if(this.className=='HoverTab') this.className='Tab'" onClick="return false;" cellspacing=0 cellpadding=0><TR> <TD class='TabLeft'><!--<img src='./images/blank.gif' style='width:1px;' />--></TD>
+<TD class='TabMiddle'>Reviews&nbsp;</TD>
+<TD class='TabRight'><!--<img src='./images/blank.gif' style='width:1px;' />--></TD>
+</TR></TABLE><div id='DropMenu6' class='DropMenu' style=''>
+<div><a id='ReviewDefinitionsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=ReviewDefinitionsSummaryPageData&BreadcrumbLevel=0'; return false;">Definitions</a></div>
+<div><a id='ReviewResultsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=ReviewReportsSummaryPageData&BreadcrumbLevel=0'; return false;">Results</a></div>
+<div><a id='ReviewWorkflowsTab' class=' Special' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=ReviewConfigEscalationSummaryPageData&BreadcrumbLevel=0'; return false;">Workflows</a></div>
+<div><a id='DisplayTab' class=' Special Last' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=ReviewDisplayConfigSummaryPageData&BreadcrumbLevel=0'; return false;">Configuration</a></div>
+</div>
+</div>
+</TD> <TD style='vertical-align:top; width:95px;'> <div class="DropMenuParent" onMouseOver="dropMenuShow(this, true);" onMouseOut="dropMenuShow(this, false);"> <TABLE id="RulesTab" class="Tab" style="height:24px;" onMouseOver="this.className='HoverTab'" onMouseOut="if(this.className=='HoverTab') this.className='Tab'" onClick="return false;" cellspacing=0 cellpadding=0><TR> <TD class='TabLeft'><!--<img src='./images/blank.gif' style='width:1px;' />--></TD>
+<TD class='TabMiddle'>Rules&nbsp;</TD>
+<TD class='TabRight'><!--<img src='./images/blank.gif' style='width:1px;' />--></TD>
+</TR></TABLE><div id='DropMenu7' class='DropMenu' style=''>
+<div><a id='RulesDefinitionsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=RulesSummaryPageData&BreadcrumbLevel=0'; return false;">Definitions</a></div>
+<div><a id='RuleSetsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=RuleSetsSummaryPageData&BreadcrumbLevel=0'; return false;">Rule&nbsp;Sets</a></div>
+<div><a id='RuleViolationsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=ViolationsByWorkitemPageData&BreadcrumbLevel=0'; return false;">Violations</a></div>
+<div><a id='ViolationExceptionsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=RuleExceptionsSummaryPageData&BreadcrumbLevel=0'; return false;">Exceptional&nbsp;Access</a></div>
+<div><a id='RuleWorkflowsTab' class=' Special' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=RuleConfigActionsPageData&BreadcrumbLevel=0'; return false;">Workflows</a></div>
+<div><a id='RuleConfigurationTab' class=' Special Last' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=RuleConfigPageData&BreadcrumbLevel=0'; return false;">Configuration</a></div>
+</div>
+</div>
+</TD> <TD style='vertical-align:top; width:95px;'> <div class="DropMenuParent" onMouseOver="dropMenuShow(this, true);" onMouseOut="dropMenuShow(this, false);"> <TABLE id="ReportsTab" class="Tab" style="height:24px;" onMouseOver="this.className='HoverTab'" onMouseOut="if(this.className=='HoverTab') this.className='Tab'" onClick="return false;" cellspacing=0 cellpadding=0><TR> <TD class='TabLeft'><!--<img src='./images/blank.gif' style='width:1px;' />--></TD>
+<TD class='TabMiddle'>Reports&nbsp;</TD>
+<TD class='TabRight'><!--<img src='./images/blank.gif' style='width:1px;' />--></TD>
+</TR></TABLE><div id='DropMenu8' class='DropMenu' style=''>
+<div><a id='TabularReportDefinitionsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=TabularReportsSummaryPageData&BreadcrumbLevel=0'; return false;">Tabular</a></div>
+<div><a id='ChartReportDefinitionsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=ChartReportsSummaryPageData&BreadcrumbLevel=0'; return false;">Charts</a></div>
+<div><a id='ReportResultsTab' class=' Last' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=ReportResultsSummaryPageData&BreadcrumbLevel=0'; return false;">Results</a></div>
+</div>
+</div>
+</TD> <TD style='vertical-align:top; width:95px;'> <div class="DropMenuParent" onMouseOver="dropMenuShow(this, true);" onMouseOut="dropMenuShow(this, false);"> <TABLE id="CollectorsTab" class="Tab" style="height:24px;" onMouseOver="this.className='HoverTab'" onMouseOut="if(this.className=='HoverTab') this.className='Tab'" onClick="return false;" cellspacing=0 cellpadding=0><TR> <TD class='TabLeft'><!--<img src='./images/blank.gif' style='width:1px;' />--></TD>
+<TD class='TabMiddle'>Collectors&nbsp;</TD>
+<TD class='TabRight'><!--<img src='./images/blank.gif' style='width:1px;' />--></TD>
+</TR></TABLE><div id='DropMenu9' class='DropMenu' style=''>
+<div><a id='IdentityCollectorsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=IdentitySummaryPageData&BreadcrumbLevel=0'; return false;">Identity&nbsp;Collectors</a></div>
+<div><a id='UnificationConfigurationTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=ParticipatingCollectorsPageData&BreadcrumbLevel=0'; return false;">Unification&nbsp;Config</a></div>
+<div><a id='AccountCollectorsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=AccountCollSummaryPageData&BreadcrumbLevel=0'; return false;">Account&nbsp;Collectors</a></div>
+<div><a id='GlobalRoleCollectorsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=GlobalRoleCollSummaryPageData&BreadcrumbLevel=0'; return false;">Role&nbsp;Collectors</a></div>
+<div><a id='EntitlementCollectorsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=EntitlementCollectorSummaryPageData&BreadcrumbLevel=0'; return false;">Entitlement&nbsp;Collectors</a></div>
+<div><a id='MultiAppEntlCollectorsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=MultiAppEntCollectorSummaryPageData&BreadcrumbLevel=0'; return false;">Multi-App&nbsp;Collectors</a></div>
+<div><a id='MetadataCollectorsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=MetadataCollectorsSummaryPage&BreadcrumbLevel=0'; return false;">App&nbsp;Metadata&nbsp;Collectors</a></div>
+<div><a id='AgentsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=AgentSummaryPage&BreadcrumbLevel=0'; return false;">Agents</a></div>
+<div><a id='SchedulingTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=CollectorsScheduleSummaryPageData&BreadcrumbLevel=0'; return false;">Scheduling</a></div>
+<div><a id='AttrSyncTab' class=' Last' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=AttrSyncMappingSummaryPageData&BreadcrumbLevel=0'; return false;">Attribute&nbsp;Synchronization</a></div>
+</div>
+</div>
+</TD> <TD style='vertical-align:top; width:95px;'> <div class="DropMenuParent" onMouseOver="dropMenuShow(this, true);" onMouseOut="dropMenuShow(this, false);"> <TABLE id="AFXPluginTab" class="Tab" style="height:24px;" onMouseOver="this.className='HoverTab'" onMouseOut="if(this.className=='HoverTab') this.className='Tab'" onClick="return false;" cellspacing=0 cellpadding=0><TR> <TD class='TabLeft'><!--<img src='./images/blank.gif' style='width:1px;' />--></TD>
+<TD class='TabMiddle'>AFX&nbsp;</TD>
+<TD class='TabRight'><!--<img src='./images/blank.gif' style='width:1px;' />--></TD>
+</TR></TABLE><div id='DropMenu10' class='DropMenu' style=''>
+<div><a id='ConnectorsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=ConnectorsSummaryPage&BreadcrumbLevel=0'; return false;">Connectors</a></div>
+<div><a id='ConnectorTypesTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=ConnectorTypesSummaryPage&BreadcrumbLevel=0'; return false;">Connector&nbsp;Templates</a></div>
+<div><a id='ServerAgentsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=ServerAgentsSummaryPage&BreadcrumbLevel=0'; return false;">Servers</a></div>
+<div><a id='ImportPackageTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=Dialog&PageID=AFXInstallConnectorWizard&Action=Template&PageSubTab=InstallConnectorPage&BreadcrumbLevel=0'; return false;">Import</a></div>
+<div><a id='ExportPackageTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=Dialog&PageID=AFXExportConnectorWizard&Action=Template&PageSubTab=AFXExportConnectorPage&BreadcrumbLevel=0'; return false;">Export</a></div>
+<div><a id='CopyConnectorsTab' class=' Last' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=Dialog&PageID=AFXCopyConnectorWizard&Action=Template&PageSubTab=AFXCopyConnectorPage&BreadcrumbLevel=0'; return false;">Clone</a></div>
+</div>
+</div>
+</TD> <TD style='vertical-align:top; width:95px;'> <div class="DropMenuParent" onMouseOver="dropMenuShow(this, true);" onMouseOut="dropMenuShow(this, false);"> <TABLE id="AdminTab" class="Tab" style="height:24px;" onMouseOver="this.className='HoverTab'" onMouseOut="if(this.className=='HoverTab') this.className='Tab'" onClick="return false;" cellspacing=0 cellpadding=0><TR> <TD class='TabLeft'><!--<img src='./images/blank.gif' style='width:1px;' />--></TD>
+<TD class='TabMiddle'>Admin&nbsp;</TD>
+<TD class='TabRight'><!--<img src='./images/blank.gif' style='width:1px;' />--></TD>
+</TR></TABLE><div id='DropMenu11' class='DropMenu' style=''>
+<div><a id='SystemTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=SystemSettingsPageData&BreadcrumbLevel=0'; return false;">System</a></div>
+<div><a id='MonitoringTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=DataRunsHistoryPageData&BreadcrumbLevel=0'; return false;">Monitoring</a></div>
+<div><a id='UserInterfaceTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=UISettingsPageData&BreadcrumbLevel=0'; return false;">User&nbsp;Interface</a></div>
+<div><a id='AttributesTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=AccountAttributeDetailPageData&BreadcrumbLevel=0'; return false;">Attributes</a></div>
+<div><a id='BusinessDescriptionsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=BusinessDescriptionSummaryPageData3&BusDescObjectType=3&BreadcrumbLevel=0'; return false;">Descriptions</a></div>
+<div><a id='DashboardsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=HomeDashboardSummaryPageData&BreadcrumbLevel=0'; return false;">Dashboards</a></div>
+<div><a id='WorkflowTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=WorkflowJobsPageData&BreadcrumbLevel=0'; return false;">Workflow</a></div>
+<div><a id='EmailEventsTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=EmailSettingsPageData&BreadcrumbLevel=0'; return false;">Email</a></div>
+<div><a id='EventHandlerTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=EventHandlerPageData&BreadcrumbLevel=0'; return false;">Change&nbsp;Events</a></div>
+<div><a id='WebServiceTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=WebServicesPageData&BreadcrumbLevel=0'; return false;">Web&nbsp;Services</a></div>
+<div><a id='MetadataTab' class=' ' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=MetadataSummaryPageData&BreadcrumbLevel=0'; return false;">Import/Export</a></div>
+<div><a id='AdminExceptionsTab' class=' Last' href="javascript:void(0);" onclick="if(typeof waitMessage != typeof undefined) waitMessage.show(); window.location='/aveksa/main?ReqType=GetPage&PageID=AdminExceptionsSummaryPageData&BreadcrumbLevel=0'; return false;">Admin&nbsp;Errors</a></div>
+</div>
+</div>
+</TD> <TD class='Right'>&nbsp;</TD>
+</TR> <TR style='background:transparent url(./images/shadow/shadow-bottom.png) 0px -3px repeat-x; height:5px'> <TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+</TR>
+</TABLE>
+<script type='text/javascript'>
+function dropMenuShow(parentDiv, show) {
+var e = parentDiv.lastChild;
+if (e == null) return;
+var mainTab = $(parentDiv).children('table')[0];
+var arrowIcon = $(mainTab).find('SPAN.Arrow');
+while (!(e.tagName && e.tagName == 'DIV')) {e = e.previousSibling; if (e == null) return;}
+if (show) {
+if (e.style.display != 'block') e.style.display='block';
+if (mainTab.className == 'Tab') mainTab.className='HoverTab';
+if (arrowIcon != null) $(arrowIcon).html('&#xe3b4;');
+} else {
+if (e.style.display != 'none') e.style.display='none';
+if (mainTab.className == 'HoverTab') mainTab.className='Tab';
+if (arrowIcon != null) $(arrowIcon).html('&#xe3b6;');
+}
+}
+</script>
+</TD></TR>
+</TABLE>
+</DIV></TD></TR>
+<!-- Main Menu End -->
+</TABLE>
+<script type='text/javascript' src="jquery-3.2.1.min.js"></script>
+</body>
+</html>
